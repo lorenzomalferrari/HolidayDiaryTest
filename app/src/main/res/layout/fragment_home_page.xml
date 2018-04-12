@@ -12,4 +12,14 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <!--
+        Lista degli ultimi post caricati delle categorie :
+
+        - 1 post su Viaggi
+        - 1 post su Note
+        - 1 post Immagini
+        - 1 post Position
+
+    -->
+
 </RelativeLayout>
