@@ -12,4 +12,8 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+
+    <!-- Inserimento del pezzo per visualizzare la mappa con la mia posizione -->
+    
+
 </RelativeLayout>
