@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Words for Italian -->
+    <string name="homepage">Home Page</string>
+    <string name="travles">Viaggi</string>
+    <string name="notes">Note</string>
+    <string name="pictures">Immagini</string>
+    <string name="position">Posizione</string>
+    <string name="account">Account</string>
+    <string name="settings">Impostazioni</string>
+    <string name="privacytermsofuse">Privacy e Termini di uso</string>
+    <string name="version">Versione</string>
+    <string name="other">Altro</string>
+
+
+</resources>
