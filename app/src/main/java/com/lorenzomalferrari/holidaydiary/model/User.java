@@ -210,7 +210,7 @@ public class User {
     }
 
     /**
-     * Metodo che modifica la data di nascita dell'utente
+     * Method that changes the user's birthdata
      * @param password
      */
     public void setPassword(String password) {
