@@ -69,6 +69,16 @@ public class User {
         this.birthdate = birthdate;
     }
 
+
+    /**
+     * Manca un metodo per il controllo della email, ovvero controllare @ .com etc....
+     */
+
+
+
+
+
+
     /**
      * Metodo che restituisce lo username dell'utente
      * @return username
