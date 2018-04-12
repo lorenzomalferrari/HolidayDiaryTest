@@ -31,6 +31,7 @@
             <item
                 android:id="@+id/nav_account"
                 android:icon="@drawable/img_account"
+
                 android:title="@string/account" />
             <item
                 android:id="@+id/nav_settings"
