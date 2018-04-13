@@ -8,7 +8,8 @@ import java.util.Date;
  */
 public class User {
 
-    private String username, firstName, lastName, email, password, gender/* M o F*/, city, country;
+    private String username, firstName, lastName, email, password, city, country;
+    private char gender/* M o F*/;
     private int age;
     private Date birthdate;
 
@@ -22,10 +23,10 @@ public class User {
         this.lastName = "User";
         this.email = "user@user.com";
         this.password = "user";
-        this.gender = "M";
+        this.gender = 'M';
         this.city = "User";
         this.country = "User";
-        this.age = 1;
+        this.age = 1; // creare una funzione che presa la data di nascita e la data di oggi....calcoli l'età...se birthdate = null non calcoli
         this.birthdate = new Date();
     }
 
@@ -56,7 +57,7 @@ public class User {
      * @param age
      * @param birthdate
      */
-    public User(String username, String firstName, String lastName, String email, String password, String gender, String city, String country, int age, Date birthdate) {
+    public User(String username, String firstName, String lastName, String email, String password, char gender, String city, String country, int age, Date birthdate) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -69,18 +70,8 @@ public class User {
         this.birthdate = birthdate;
     }
 
-
     /**
-     * Manca un metodo per il controllo della email, ovvero controllare @ .com etc....
-     */
-
-
-
-
-
-
-    /**
-     * Metodo che restituisce lo username dell'utente
+     * Method that returns the user's username
      * @return username
      */
     public String getUsername() {
@@ -88,7 +79,7 @@ public class User {
     }
 
     /**
-     * Metodo che modifica lo username dell'utente
+     * Method that allows you to change the username
      * @param username
      */
     public void setUsername(String username) {
@@ -96,7 +87,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce il nome dell'utente
+     * Method that returns the user's name
      * @return firstName
      */
     public String getFirstName() {
@@ -112,8 +103,8 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce il cognome dell'utente
-     * * @return lastName
+     * Metodo che restituisce il nome dell'utente
+     * @param lastName
      */
     public String getLastName() {
         return lastName;
@@ -128,7 +119,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce l'email dell'utente
+     * Metodo che restituisce l'email
      * @return email
      */
     public String getEmail() {
@@ -144,10 +135,10 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce il genere dell'utente
+     * Metodo che mi restituisce il genere dell'utente
      * @return
      */
-    public String getGender() {
+    public char getGender() {
         return gender;
     }
 
@@ -155,7 +146,7 @@ public class User {
      * Metodo che modifica il genere dell'utente
      * @param gender
      */
-    public void setGender(String gender) {
+    public void setGender(char gender) {
         this.gender = gender;
     }
 
@@ -176,7 +167,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce il stato dell'utente
+     * Metodo che restituisce lo stato dell'utente
      * @return country
      */
     public String getCountry() {
@@ -196,7 +187,7 @@ public class User {
     }
 
     /**
-     * Method that changes the user's age
+     * Metodo che modifica l'età dell'utente
      * @param age
      */
     public void setAge(int age) {
@@ -204,7 +195,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce l'età dell'utente
+     * Metodo che restituisce la data di nascita dell'utente
      * @return
      */
     public Date getBirthdate() {
@@ -220,7 +211,7 @@ public class User {
     }
 
     /**
-     * Method that changes the user's birthdata
+     * Metodo che mi modifica la password dell'utente
      * @param password
      */
     public void setPassword(String password) {
