@@ -231,4 +231,9 @@ public class User {
         return "User{" + "username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", gender=" + gender + ", city=" + city + ", country=" + country + ", age=" + age + ", birthdate=" + birthdate + '}';
     }
 
+
+    /**
+     * Implementazione della classe al completo...Vedere file su Progetto fittizio su NetBeans (MacBook Pro 15)
+     */
+
 }
