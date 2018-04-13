@@ -45,7 +45,7 @@ public class User {
 
     /**
      * User Costructor
-     * Complete constructor if the user compiles all the fields
+     * Complete constructor if the User compiles all the fields
      * @param username
      * @param firstName
      * @param lastName
@@ -87,7 +87,7 @@ public class User {
     }
 
     /**
-     * Method that returns the user's name
+     * Method that returns the user's firstName
      * @return firstName
      */
     public String getFirstName() {
@@ -95,7 +95,7 @@ public class User {
     }
 
     /**
-     * Metodo che modifica il nome dell'utente
+     * Method that allows you to change the firstName
      * @param firstName
      */
     public void setFirstName(String firstName) {
@@ -103,15 +103,15 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce il nome dell'utente
-     * @param lastName
+     * Method that returns the user's lastName
+     * @return  lastName
      */
     public String getLastName() {
         return lastName;
     }
 
     /**
-     * Metodo che modifica il cognome dell'utente
+     * Method that allows you to change the lastName
      * @param  lastName
      */
     public void setLastName(String lastName) {
