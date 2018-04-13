@@ -119,7 +119,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce l'email
+     * Method that returns the user's email
      * @return email
      */
     public String getEmail() {
@@ -135,7 +135,7 @@ public class User {
     }
 
     /**
-     * Metodo che mi restituisce il genere dell'utente
+     * Method that returns the user's gender
      * @return
      */
     public char getGender() {
@@ -151,7 +151,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce la città dell'utente
+     * Method that returns the user's city
      * @return city
      */
     public String getCity() {
@@ -167,7 +167,7 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce lo stato dell'utente
+     * Method that returns the user's country
      * @return country
      */
     public String getCountry() {
@@ -182,6 +182,10 @@ public class User {
         this.country = country;
     }
 
+    /**
+     * Method that returns the user's age
+     * @return age
+     */
     public int getAge() {
         return age;
     }
@@ -195,8 +199,8 @@ public class User {
     }
 
     /**
-     * Metodo che restituisce la data di nascita dell'utente
-     * @return
+     * Method that returns the user's birthdate
+     * @return birthdate
      */
     public Date getBirthdate() {
         return birthdate;
