@@ -31,10 +31,17 @@
 
     <!-- Testo (lorenzomalferrari.com) -->
     <TextView
+        android:id="@+id/version_authorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorenzo Malferrari"/>
+
+    <!-- Testo (lorenzomalferrari.com) -->
+    <TextView
+        android:id="@+id/version_websiteName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="lorenzomalferrari.com"/>
-
     <!-- All rights reserved-->
 
 </RelativeLayout>
