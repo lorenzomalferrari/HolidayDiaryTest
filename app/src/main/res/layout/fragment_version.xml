@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/version_versionName"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/ic_launcher"/>
+        android:padding="20dp"
+        android:src="@mipmap/ic_launcher_round"/>
 
     <!-- Testo (Lorenzo Malferrari) -->
     <TextView
