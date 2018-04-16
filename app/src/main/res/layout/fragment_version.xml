@@ -32,7 +32,7 @@
 
     <!-- Immagine della App -->
 
-    <!-- Testo (lorenzomalferrari.com) -->
+    <!-- Testo (Lorenzo Malferrari) -->
     <TextView
         android:id="@+id/version_authorName"
         android:layout_width="wrap_content"
@@ -46,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_below="@id/version_authorName"
         android:text="lorenzomalferrari.com"/>
 
     <!-- All rights reserved-->
