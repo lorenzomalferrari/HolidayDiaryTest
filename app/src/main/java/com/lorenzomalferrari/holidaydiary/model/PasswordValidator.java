@@ -6,5 +6,15 @@ package com.lorenzomalferrari.holidaydiary.model;
  */
 public class PasswordValidator {
 
+    /**
+     *  Che caratteri dovrà contenere la password?
+     *
+     *  - 2 numeri
+     *  - 1 maiuscola
+     *
+     * Da quanti caratteri dovrà essere composta la password?
+     *
+     *  - 6 caratteri
+     */
 
 }
