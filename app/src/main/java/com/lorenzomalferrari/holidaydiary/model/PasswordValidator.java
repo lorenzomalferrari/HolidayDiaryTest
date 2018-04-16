@@ -1,7 +1,7 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
 /**
- * Class for to validate the password
+ * Class to validate the past depending on specific requirements
  * @author lorenzomalferrari.com
  */
 public class PasswordValidator {
