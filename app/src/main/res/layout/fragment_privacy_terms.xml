@@ -24,6 +24,7 @@
         android:text="Terms of use"/>
 
     <TextView
+        android:id="@+id/privacyterms_termsofuseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Testo sui termini"/>
