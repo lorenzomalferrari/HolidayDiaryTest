@@ -47,4 +47,24 @@
     <string name="age_text">Age</string>
     <string name="usarname_text">usarname</string>
 
+
+
+
+    <string name="privacy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
+        at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
+        venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
+        sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
+        Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin
+        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.</string>
+
+    <string name="terms_text">Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
+        molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
+        Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi,
+        eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus.
+        Duis interdum dignissim nisi a efficitur. In erat urna, fringilla vel mi pharetra,
+        tincidunt commodo dui. Aenean laoreet lacus sed diam lobortis, euismod consectetur justo
+        maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet.
+        Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra
+        lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium
+        massa, id lacinia risus ante at diam.</string>
 </resources>
