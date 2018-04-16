@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="46" />
+                                                <entry key="scalingPercent" value="71" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -47,19 +47,14 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="$USER_HOME$/Downloads/add.png" />
-                                      <entry key="foregroundLayerName" value="ic_add" />
-                                      <entry key="outputName" value="img_add" />
+                                      <entry key="foregroundImage" value="$USER_HOME$/Downloads/download.png" />
+                                      <entry key="foregroundLayerName" value="ic_profile" />
+                                      <entry key="outputName" value="img_profile" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

@@ -5,23 +5,51 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="122dp"
-        android:layout_height="115dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        app:srcCompat="@color/secondaryDarkColor" />
+        android:id="@+id/textView_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="50dp"
+        android:src="@drawable/img_account" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="159dp"
-        android:layout_height="114dp"
-        android:layout_alignBottom="@+id/imageView4"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50dp"
-        android:text="@string/nav_header_title"
-        android:textColor="@color/primaryDarkColor"
-        android:textSize="30dp"/>
+        android:id="@+id/textView_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/textView_profile"
+        android:padding="10dp"
+        android:text="Lorenzo"/>
+    <TextView
+
+        android:id="@+id/textView_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/textView_profile"
+        android:layout_below="@+id/textView_firstName"
+        android:padding="10dp"
+        android:text="Malferrari"/>
+
+    <TextView
+        android:id="@+id/textView_usarname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/textView_profile"
+        android:layout_below="@+id/textView_lastName"
+        android:padding="10dp"
+        android:text="(usarname)"/>
+
+    <TextView
+        android:id="@+id/textView_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_profile"
+        android:text="Email"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_profile"
+        android:layout_toRightOf="@+id/textView_email"
+        android:text="malfe.lore@gmail.com"/>
+
+
 </RelativeLayout>

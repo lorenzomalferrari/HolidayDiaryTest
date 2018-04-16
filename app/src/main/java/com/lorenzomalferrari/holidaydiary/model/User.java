@@ -58,7 +58,6 @@ public class User {
      * @param gender
      * @param city
      * @param country
-     * @param age
      * @param birthdate
      */
     public User(String username, String firstName, String lastName, String email, String password, char gender, String city, String country, Date birthdate) {
@@ -269,7 +268,10 @@ public class User {
      */
     @Override
     public String toString() {
-        return "User{" + "username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", gender=" + gender + ", city=" + city + ", country=" + country + ", age=" + age + ", birthdate=" + birthdate + '}';
+        return "User{" + "username=" + username + ", firstName=" + firstName +
+                ", lastName=" + lastName + ", email=" + email + ", password=" + password +
+                ", gender=" + gender + ", city=" + city + ", country=" + country + ", age=" + age +
+                ", birthdate=" + birthdate + '}';
     }
 
 }
