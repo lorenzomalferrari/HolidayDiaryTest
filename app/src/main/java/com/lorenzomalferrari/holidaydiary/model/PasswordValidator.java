@@ -34,4 +34,25 @@ public class PasswordValidator {
             return status;
         }
     }
+
+
+    /**
+     *
+     * @return
+     *  - true se la password rispecchia i requisiti minimi
+     *  - false se non li rispetta
+     */
+    private boolean validatePassword(String password){
+        //controllo la lunghezza
+        if (isLengthCorrect(password) == true){
+            //controllo i singoli caratteri della password per verificare se contiene le richieste specifiche
+            for(int i = 0; i <= password.length(); i++){
+                
+            }
+        }
+        else{
+            //Mandare errore
+        }
+
+    }
 }
