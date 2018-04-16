@@ -36,6 +36,13 @@
         android:text="1.0.5"/>
 
     <!-- Immagine della App -->
+    <ImageView
+        android:id="@+id/version_imgApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/version_versionName"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"/>
 
     <!-- Testo (Lorenzo Malferrari) -->
     <TextView
@@ -43,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_below="@id/version_imgApp"
         android:text="Lorenzo Malferrari"/>
 
     <!-- Testo (lorenzomalferrari.com) -->
