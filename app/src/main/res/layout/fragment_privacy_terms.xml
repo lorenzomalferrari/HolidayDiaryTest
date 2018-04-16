@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/privacyterms_privacyTitle"
-        android:text="Testo sulla privacy"/>
+        android:text="@string/privacy_text"/>
 
     <TextView
         android:id="@+id/privacyterms_termsofuseTitle"
@@ -32,6 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/privacyterms_termsofuseTitle"
-        android:text="Testo sui termini"/>
+        android:text="@string/terms_text"/>
 
 </RelativeLayout>
