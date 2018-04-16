@@ -8,8 +8,21 @@
     <!-- Immagine di sfondo -->
 
     <!-- App name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Holiday Diary"/>
 
     <!-- Versione (Testo + numero)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.0.5"/>
 
     <!-- Immagine della App -->
 
