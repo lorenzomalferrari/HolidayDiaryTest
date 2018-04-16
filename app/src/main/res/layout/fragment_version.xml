@@ -45,6 +45,7 @@
         android:id="@+id/version_websiteName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="lorenzomalferrari.com"/>
 
     <!-- All rights reserved-->
