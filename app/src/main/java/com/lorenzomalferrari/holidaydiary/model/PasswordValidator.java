@@ -47,7 +47,7 @@ public class PasswordValidator {
         if (isLengthCorrect(password) == true){
             //controllo i singoli caratteri della password per verificare se contiene le richieste specifiche
             for(int i = 0; i <= password.length(); i++){
-                
+                //password.charAt(i) = 'M';
             }
         }
         else{
