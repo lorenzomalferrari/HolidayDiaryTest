@@ -41,4 +41,10 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/cabin_semi_bold"/>
+
+    <!-- Cabin Semi Bold Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_semi_bold_italic"/>
 </font-family>
