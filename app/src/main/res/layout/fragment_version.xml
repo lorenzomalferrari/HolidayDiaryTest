@@ -17,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:paddingTop="40dp"
         android:paddingBottom="20dp"
-        android:text="Holiday Diary"/>
+        android:text="@string/app_name"
+        android:fontFamily="@font/cabin_bold"/>
 
     <!-- Versione (Testo + numero)-->
     <TextView
@@ -27,7 +28,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/version_appName"
         android:padding="20dp"
-        android:text="Version 1.0.5"/>
+        android:text="Version 1.0.5"
+        android:fontFamily="@font/cabin_semi_bold_italic"/>
 
     <!-- Immagine della App -->
     <ImageView
@@ -47,7 +49,8 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/version_imgApp"
         android:padding="20dp"
-        android:text="Lorenzo Malferrari"/>
+        android:text="@string/author"
+        android:fontFamily="@font/cabin_bold_italic"/>
 
     <!-- Testo (lorenzomalferrari.com) -->
     <TextView
@@ -57,7 +60,8 @@
         android:layout_centerHorizontal="true"
         android:padding="20dp"
         android:layout_below="@id/version_authorName"
-        android:text="www.lorenzomalferrari.com"/>
+        android:text="www.lorenzomalferrari.com"
+        android:fontFamily="@font/cabin_italic"/>
 
     <!-- All rights reserved-->
     <TextView
@@ -67,6 +71,7 @@
         android:layout_centerHorizontal="true"
         android:padding="20dp"
         android:layout_below="@id/version_websiteName"
-        android:text="All rights sererved"/>
+        android:text="All rights sererved"
+        android:fontFamily="@font/cabin_italic"/>
 
 </RelativeLayout>
