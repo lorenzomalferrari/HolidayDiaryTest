@@ -1,6 +1,10 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class representative of the User and his data
@@ -14,7 +18,7 @@ public class User {
     private Date birthdate;
 
     /**
-     * Default constructor
+     * Default constructor for the test
      * User with precompiled fields
      */
     public User() {
@@ -57,7 +61,7 @@ public class User {
      * @param age
      * @param birthdate
      */
-    public User(String username, String firstName, String lastName, String email, String password, char gender, String city, String country, int age, Date birthdate) {
+    public User(String username, String firstName, String lastName, String email, String password, char gender, String city, String country, Date birthdate) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -66,8 +70,45 @@ public class User {
         this.gender = gender;
         this.city = city;
         this.country = country;
-        this.age = age;
+        this.age = calcAge();
         this.birthdate = birthdate;
+    }
+
+
+
+    /**
+     * Metodo per calcolare l'età dell'utente
+     */
+    private int calcAge(){
+        int calcAge = 0;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1;
+        try {
+            date1 = sdf.parse("1997-05-21");
+            // se l'utente ha inserito la data di nascita, calcoliamo la sua età
+            if (date1 != null) {
+                //prendo data di oggi
+                Date today = new Date(System.currentTimeMillis());
+                //prendo data di nascita col costruttore
+
+                // calcolo age
+                calcAge = Integer.parseInt(today.toString().split(" ")[5]) - Integer.parseInt(date1.toString().split(" ")[5]);
+            }
+            // se no age = 0/null
+            else{
+                calcAge = 0;
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return calcAge;
+    }
+
+    /**
+     * Validazione email
+     */
+    private void emailValidation(){
+
     }
 
     /**
@@ -233,7 +274,16 @@ public class User {
 
 
     /**
-     * Implementazione della classe al completo...Vedere file su Progetto fittizio su NetBeans (MacBook Pro 15)
+     * Test per verificare il corretto funzionamento della classe
+     * In modo da poterla sfruttare al meglio nel progetto dell'applicazione HolidayDiary
+     * @param args
+     * @throws ParseException
      */
-
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = sdf.parse("1997-05-21");
+        User u = new User("ciaoBello","Ciao","Bello","ciao@bello.com","123456",'M',"BO","Italy",date1);
+        System.out.println(u.toString());
+    }
+    
 }
