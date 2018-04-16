@@ -107,6 +107,9 @@ public class User {
      * Validazione email
      */
     private boolean emailValidation(String string){
+
+        /* METODO DA VERIFICARE */
+
         //Create EmailValidator Object
         EmailValidator emailValidator = new EmailValidator();
         //Create boolean var for to save the result
