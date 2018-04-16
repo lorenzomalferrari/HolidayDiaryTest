@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/textView_profile"
+        android:id="@+id/img_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="50dp"
@@ -15,7 +15,7 @@
         android:id="@+id/textView_firstName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_toRightOf="@id/textView_profile"
+        android:layout_toRightOf="@id/img_account"
         android:padding="10dp"
         android:text="Lorenzo"/>
     <TextView
@@ -23,7 +23,7 @@
         android:id="@+id/textView_lastName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_toRightOf="@id/textView_profile"
+        android:layout_toRightOf="@id/img_account"
         android:layout_below="@+id/textView_firstName"
         android:padding="10dp"
         android:text="Malferrari"/>
@@ -32,7 +32,7 @@
         android:id="@+id/textView_usarname"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_toRightOf="@id/textView_profile"
+        android:layout_toRightOf="@id/img_account"
         android:layout_below="@+id/textView_lastName"
         android:padding="10dp"
         android:text="(usarname)"/>
@@ -41,15 +41,45 @@
         android:id="@+id/textView_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView_profile"
-        android:text="Email"/>
+        android:layout_below="@id/img_account"
+        android:text="Email:    "/>
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView_profile"
+        android:layout_below="@id/img_account"
         android:layout_toRightOf="@+id/textView_email"
         android:text="malfe.lore@gmail.com"/>
+
+    <!-- City -->
+    <TextView
+        android:id="@+id/textView_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_email"
+        android:text="City"/>
+    <!-- Country -->
+    <TextView
+        android:id="@+id/textView_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textView_city"
+        android:layout_below="@id/img_account"
+        android:text="Country"/>
+    <!-- Gender -->
+    <TextView
+        android:id="@+id/textView_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_email"
+        android:text="City"/>
+    <!-- Age -->
+    <TextView
+        android:id="@+id/textView_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_email"
+        android:text="Age"/>
 
 
 </RelativeLayout>
