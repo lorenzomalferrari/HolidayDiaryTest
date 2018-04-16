@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Immagine del profilo -->
     <ImageView
         android:id="@+id/img_account"
         android:layout_width="wrap_content"
@@ -11,6 +12,7 @@
         android:padding="50dp"
         android:src="@drawable/img_account" />
 
+    <!-- FirstName -->
     <TextView
         android:id="@+id/textView_firstName"
         android:layout_width="match_parent"
@@ -18,8 +20,9 @@
         android:layout_toRightOf="@id/img_account"
         android:padding="10dp"
         android:text="Lorenzo"/>
-    <TextView
 
+    <!-- LastName -->
+    <TextView
         android:id="@+id/textView_lastName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -28,6 +31,7 @@
         android:padding="10dp"
         android:text="Malferrari"/>
 
+    <!-- Usarname -->
     <TextView
         android:id="@+id/textView_usarname"
         android:layout_width="match_parent"
@@ -37,28 +41,34 @@
         android:padding="10dp"
         android:text="(usarname)"/>
 
-    <TextView
-        android:id="@+id/textView_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/img_account"
-        android:text="Email:    "/>
-    <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/img_account"
-        android:layout_toRightOf="@+id/textView_email"
-        android:text="malfe.lore@gmail.com"/>
+    <!-- Email Area -->
+        <!-- Email Text -->
+        <TextView
+            android:id="@+id/textView_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_account"
+            android:layout_alignParentLeft="true"
+            android:text="Email:    "/>
 
-    <!-- City -->
+        <!-- Email Value -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_account"
+            android:layout_toRightOf="@+id/textView_email"
+            android:layout_alignParentRight="true"
+            android:text="malfe.lore@gmail.com"/>
+
+    <!-- City Area -->
     <TextView
         android:id="@+id/textView_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_email"
         android:text="City"/>
-    <!-- Country -->
+    <!-- Country Area -->
     <TextView
         android:id="@+id/textView_country"
         android:layout_width="wrap_content"
@@ -66,14 +76,14 @@
         android:layout_toRightOf="@id/textView_city"
         android:layout_below="@id/img_account"
         android:text="Country"/>
-    <!-- Gender -->
+    <!-- Gender Area -->
     <TextView
         android:id="@+id/textView_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_email"
         android:text="City"/>
-    <!-- Age -->
+    <!-- Age Area -->
     <TextView
         android:id="@+id/textView_age"
         android:layout_width="wrap_content"
