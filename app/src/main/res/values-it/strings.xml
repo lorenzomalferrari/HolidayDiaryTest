@@ -12,5 +12,9 @@
     <string name="version">Versione</string>
     <string name="other">Altro</string>
 
-
+    <string name="email_text">Email</string>
+    <string name="city_text">Città</string>
+    <string name="country_text">Stato</string>
+    <string name="gender_text">Sesso</string>
+    <string name="age_text">Età</string>
 </resources>
