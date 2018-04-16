@@ -43,16 +43,19 @@ public class PasswordValidator {
      *  - false se non li rispetta
      */
     private boolean validatePassword(String password){
+        boolean flag = false;
         //controllo la lunghezza
         if (isLengthCorrect(password) == true){
             //controllo i singoli caratteri della password per verificare se contiene le richieste specifiche
             for(int i = 0; i <= password.length(); i++){
                 //password.charAt(i) = 'M';
             }
+            flag = true;
         }
         else{
             //Mandare errore
+            flag = false;
         }
-
+        return flag;
     }
 }
