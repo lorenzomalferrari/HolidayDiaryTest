@@ -11,6 +11,7 @@
         android:text="Privacy"/>
 
     <TextView
+        android:id="@+id/privacyterms_privacyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Testo sulla privacy"/>
