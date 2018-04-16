@@ -106,8 +106,12 @@ public class User {
     /**
      * Validazione email
      */
-    private void emailValidation(){
-
+    private boolean emailValidation(String string){
+        //Create EmailValidator Object
+        EmailValidator emailValidator = new EmailValidator();
+        //Create boolean var for to save the result
+        boolean isCorrect = emailValidator.validateEmail(string);
+        return isCorrect;
     }
 
     /**
