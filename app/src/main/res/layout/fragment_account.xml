@@ -114,7 +114,6 @@
         android:layout_below="@id/textView_country"
         android:layout_toRightOf="@+id/textView_gender"
         android:padding="10dp"
-
         android:text="Maschio"/>
     <!-- Age Area -->
     <TextView
