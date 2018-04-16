@@ -45,5 +45,6 @@
     <string name="country_text">Country</string>
     <string name="gender_text">Gender</string>
     <string name="age_text">Age</string>
+    <string name="usarname_text">usarname</string>
 
 </resources>

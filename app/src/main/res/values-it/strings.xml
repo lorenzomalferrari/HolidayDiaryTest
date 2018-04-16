@@ -17,4 +17,5 @@
     <string name="country_text">Stato</string>
     <string name="gender_text">Sesso</string>
     <string name="age_text">Età</string>
+    <string name="usarname_text">usarname</string>
 </resources>

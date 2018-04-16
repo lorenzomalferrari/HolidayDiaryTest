@@ -39,7 +39,7 @@
         android:layout_toRightOf="@id/img_account"
         android:layout_below="@+id/textView_lastName"
         android:padding="10dp"
-        android:text="(usarname)"/>
+        android:text="@string/usarname_text"/>
 
 
     <!-- Email Area -->
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/img_account"
             android:padding="10dp"
-            android:text="Email:    "/>
+            android:text="@string/email_text"/>
 
         <!-- Email Value -->
         <TextView
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_email"
         android:padding="10dp"
-        android:text="City"/>
+        android:text="@string/city_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_city"
         android:padding="10dp"
-        android:text="Country"/>
+        android:text="@string/country_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_country"
         android:padding="10dp"
-        android:text="Gender: "/>
+        android:text="@string/gender_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_gender"
         android:padding="10dp"
-        android:text="Age: "/>
+        android:text="@string/age_text"/>
 
     <TextView
         android:layout_width="wrap_content"
