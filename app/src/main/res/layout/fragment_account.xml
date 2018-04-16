@@ -7,28 +7,30 @@
     <!-- Immagine del profilo -->
     <ImageView
         android:id="@+id/img_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="142dp"
         android:padding="50dp"
-        android:tint="@color/secondaryDarkColor"
-        android:src="@drawable/img_account" />
+        android:src="@drawable/img_account"
+        android:tint="@color/secondaryDarkColor" />
 
     <!-- FirstName -->
     <TextView
         android:id="@+id/textView_firstName"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@id/img_account"
         android:padding="10dp"
+        android:textSize="20dp"
         android:text="Lorenzo"/>
 
     <!-- LastName -->
     <TextView
         android:id="@+id/textView_lastName"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@id/img_account"
         android:layout_below="@+id/textView_firstName"
+        android:textSize="20dp"
         android:padding="10dp"
         android:text="Malferrari"/>
 
@@ -36,9 +38,10 @@
     <TextView
         android:id="@+id/textView_usarname"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@id/img_account"
         android:layout_below="@+id/textView_lastName"
+        android:textSize="20dp"
         android:padding="10dp"
         android:text="@string/usarname_text"/>
 
