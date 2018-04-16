@@ -40,13 +40,13 @@
 
 
 
-    <string name="email_text"></string>
+    <string name="email_text">Email</string>
 
-    <string name="city_text"></string>
+    <string name="city_text">City</string>
 
-    <string name="country_text"></string>
+    <string name="country_text">Country</string>
 
-    <string name="gender_text"></string>
+    <string name="gender_text">Gender</string>
 
     <string name="age_text">Age</string>
 
