@@ -23,4 +23,10 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/cabin_medium"/>
+
+    <!-- Cabin Medium Italic -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cabin_medium_italic"/>
 </font-family>
