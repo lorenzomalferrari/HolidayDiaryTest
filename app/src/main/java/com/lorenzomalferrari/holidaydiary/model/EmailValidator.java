@@ -14,7 +14,10 @@ public class EmailValidator {
 
     // static Pattern object, since pattern is fixed
     private static Pattern pattern;
-    
+
+    /**
+     * Costructor
+     */
     public EmailValidator() {
         // initialize the Pattern object
         pattern = Pattern.compile(EMAIL_REGEX, Pattern.CASE_INSENSITIVE);
