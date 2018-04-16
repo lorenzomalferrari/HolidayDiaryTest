@@ -36,10 +36,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="login_name">HolidayDiary - Login</string>
 
-    <string name="number_version">1.0</string>
-
-
-
     <string name="email_text">Email</string>
     <string name="city_text">City</string>
     <string name="country_text">Country</string>
@@ -48,6 +44,9 @@
     <string name="usarname_text">usarname</string>
     <string name="privacy_title">Privacy</string>
     <string name="terms_title">Terms of use</string>
+    <string name="website">www.lorenzomalferrari.com</string>
+
+    <string name="numberVersion">Version 1.0.5</string>
 
 
 
