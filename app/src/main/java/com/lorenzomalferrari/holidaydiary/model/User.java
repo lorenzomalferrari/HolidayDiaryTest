@@ -271,19 +271,5 @@ public class User {
     public String toString() {
         return "User{" + "username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", gender=" + gender + ", city=" + city + ", country=" + country + ", age=" + age + ", birthdate=" + birthdate + '}';
     }
-
-
-    /**
-     * Test per verificare il corretto funzionamento della classe
-     * In modo da poterla sfruttare al meglio nel progetto dell'applicazione HolidayDiary
-     * @param args
-     * @throws ParseException
-     */
-    public static void main(String[] args) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = sdf.parse("1997-05-21");
-        User u = new User("ciaoBello","Ciao","Bello","ciao@bello.com","123456",'M',"BO","Italy",date1);
-        System.out.println(u.toString());
-    }
     
 }
