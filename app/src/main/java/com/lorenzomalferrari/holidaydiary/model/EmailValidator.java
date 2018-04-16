@@ -38,7 +38,7 @@ public class EmailValidator {
      * Test
      * malfe.lore@gmail.com --> true
      * malfe.loregmail.com --> false
-     * 
+     *
      * Esito corretto
      */
     /*public static void main(String args[]) {
