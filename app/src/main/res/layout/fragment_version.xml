@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        
         android:text="Version"/>
 
     <TextView
@@ -28,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/version_versionName"
         android:text="1.0.5"/>
 
     <!-- Immagine della App -->
@@ -47,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/version_authorName"
-        android:text="lorenzomalferrari.com"/>
+        android:text="www.lorenzomalferrari.com"/>
 
     <!-- All rights reserved-->
     <TextView
