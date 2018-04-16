@@ -3,5 +3,5 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/Cabin-Regular" />
+        android:font="@font/cabin_bold"/>
 </font-family>
