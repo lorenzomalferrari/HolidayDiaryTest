@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="50dp"
+        android:tint="@color/secondaryDarkColor"
         android:src="@drawable/img_account" />
 
     <!-- FirstName -->
@@ -59,7 +60,6 @@
             android:layout_below="@id/img_account"
             android:layout_toRightOf="@+id/textView_email"
             android:padding="10dp"
-
             android:text="malfe.lore@gmail.com"/>
 
     <!-- City Area -->
