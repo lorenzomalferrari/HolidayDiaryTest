@@ -38,4 +38,16 @@
 
     <string name="number_version">1.0</string>
 
+
+
+    <string name="email_text"></string>
+
+    <string name="city_text"></string>
+
+    <string name="country_text"></string>
+
+    <string name="gender_text"></string>
+
+    <string name="age_text">Age</string>
+
 </resources>
