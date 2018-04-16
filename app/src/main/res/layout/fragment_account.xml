@@ -7,7 +7,7 @@
     <!-- Immagine del profilo -->
     <ImageView
         android:id="@+id/img_account"
-        android:layout_width="148dp"
+        android:layout_width="142dp"
         android:layout_height="142dp"
         android:padding="50dp"
         android:src="@drawable/img_account"
