@@ -21,7 +21,7 @@
         android:layout_toRightOf="@+id/register_firstNameText"
         android:layout_marginLeft="26dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text"/>
     <!-- LastName -->
     <TextView
         android:id="@+id/register_lastNameText"
@@ -40,7 +40,7 @@
         android:paddingTop="10dp"
         android:layout_marginLeft="3dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
     <!-- Username -->
     <TextView
         android:id="@+id/register_usarnameText"
@@ -58,7 +58,7 @@
         android:layout_below="@+id/register_lastNameValue"
         android:paddingTop="10dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
     <!-- Email -->
     <TextView
         android:id="@+id/register_emailText"
@@ -129,8 +129,9 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/register_cityText"
         android:layout_below="@id/register_passwordValueValidate"
+        android:layout_marginLeft="25dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
     <!-- Country -->
     <TextView
         android:id="@+id/register_countryText"
@@ -147,7 +148,7 @@
         android:layout_toRightOf="@+id/register_countryText"
         android:layout_below="@id/register_cityValue"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <!-- Gender -->
     <TextView
@@ -204,5 +205,14 @@
         android:layout_below="@id/radioGroup"
         android:ems="10"
         android:inputType="datetime" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_birthdateText"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:text="Salva"/>
 
 </RelativeLayout>
