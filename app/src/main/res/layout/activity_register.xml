@@ -78,13 +78,14 @@
         android:layout_marginLeft="29dp"
         android:ems="10"
         android:inputType="textEmailAddress" />
-    
+
     <!-- Password -->
     <TextView
         android:id="@+id/register_passwordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_emailText"
+        android:padding="15dp"
         android:text="Inserisci password: "/>
 
     <EditText
@@ -93,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/register_passwordText"
         android:layout_below="@id/register_emailText"
+        android:layout_marginLeft="8dp"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -101,6 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_passwordText"
+        android:padding="15dp"
         android:text="Rinserisci password: "/>
 
     <EditText
@@ -117,15 +120,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_passwordTextValidate"
+        android:padding="15dp"
         android:text="City: "/>
+
+    <EditText
+        android:id="@+id/register_cityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_cityText"
+        android:layout_below="@id/register_passwordValueValidate"
+        android:ems="10"
+        android:inputType="textPassword" />
     <!-- Country -->
     <TextView
         android:id="@+id/register_countryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_cityText"
+        android:padding="15dp"
         android:text="Country: "/>
 
+    <EditText
+        android:id="@+id/register_countryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_countryText"
+        android:layout_below="@id/register_cityValue"
+        android:ems="10"
+        android:inputType="textPassword" />
 
     <!-- Gender -->
     <TextView
@@ -133,24 +155,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_countryText"
+        android:padding="15dp"
         android:text="Gender: "/>
 
     <RadioGroup
-        android:layout_width="match_parent"
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_countryText"
+        android:padding="10dp"
         android:layout_toRightOf="@id/register_genderText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="163dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButtonMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_below="@id/register_countryText"
             android:layout_toRightOf="@id/register_genderText"
             android:layout_weight="1"
@@ -160,16 +180,29 @@
             android:id="@+id/radioButtonFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_below="@id/register_countryText"
             android:layout_toRightOf="@id/register_genderText"
             android:layout_weight="1"
-
             android:text="Female" />
     </RadioGroup>
 
-
     <!-- Birthdate -->
 
+    <TextView
+        android:id="@+id/register_birthdateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_genderText"
+        android:padding="15dp"
+        android:text="Birthdate: "/>
+
+    <EditText
+        android:id="@+id/register_birthdateValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_countryText"
+        android:layout_below="@id/radioGroup"
+        android:ems="10"
+        android:inputType="datetime" />
 
 </RelativeLayout>
