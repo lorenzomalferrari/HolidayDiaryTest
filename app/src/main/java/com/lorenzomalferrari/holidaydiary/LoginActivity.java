@@ -53,8 +53,10 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = "malfe.lore@gmail.com";
+                String password = "123456";
                 //if profilo esiste già
-                if (emailText.getText().toString().equals("malfe.lore@gmail.com") && passwordText.getText().toString().equals("123456")){
+                if (emailText.getText().toString().equals(email) && passwordText.getText().toString().equals(password) && isEmailValid(email) && isPasswordValid(password)){
                     callMenu();
                 }
                 //else vai a crearti il profilo
@@ -71,12 +73,22 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isEmailValid(String email) {
         //L'email deve contenere il campo @
-        return email.contains("@");
+        if (email.contains("@") == true){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     private boolean isPasswordValid(String password) {
         //La passowrd deve essere lunga almeno 6 caratteri
-        return password.length() > 6;
+        if ((password.length() >= 6) == true){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     //Chiama la RegisterActivity
