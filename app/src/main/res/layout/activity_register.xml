@@ -23,6 +23,7 @@
         android:layout_toRightOf="@+id/register_firstNameText"
         android:layout_marginLeft="26dp"
         android:ems="10"
+        android:hint="@string/firstName"
         android:inputType="text"/>
     <!-- LastName -->
     <TextView
@@ -42,7 +43,8 @@
         android:paddingTop="10dp"
         android:layout_marginLeft="3dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="@string/lastName" />
     <!-- Username -->
     <TextView
         android:id="@+id/register_usarnameText"
@@ -60,7 +62,8 @@
         android:layout_below="@+id/register_lastNameValue"
         android:paddingTop="10dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="@string/usarname"/>
     <!-- Email -->
     <TextView
         android:id="@+id/register_emailText"
@@ -79,7 +82,8 @@
         android:paddingTop="10dp"
         android:layout_marginLeft="29dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_text"/>
 
     <!-- Password -->
     <TextView
@@ -98,7 +102,8 @@
         android:layout_below="@id/register_emailText"
         android:layout_marginLeft="8dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="Password" />
 
     <TextView
         android:id="@+id/register_passwordTextValidate"
@@ -106,7 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_passwordText"
         android:padding="15dp"
-        android:text="Rinserisci password: "/>
+        android:text="Rinserisci password: "
+        />
 
     <EditText
         android:id="@+id/register_passwordValueValidate"
@@ -115,7 +121,8 @@
         android:layout_toRightOf="@+id/register_passwordTextValidate"
         android:layout_below="@id/register_passwordValue"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="Conferma password"/>
     <!-- City -->
     <TextView
         android:id="@+id/register_cityText"
@@ -133,7 +140,8 @@
         android:layout_below="@id/register_passwordValueValidate"
         android:layout_marginLeft="25dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="@string/city_text"/>
     <!-- Country -->
     <TextView
         android:id="@+id/register_countryText"
@@ -150,7 +158,8 @@
         android:layout_toRightOf="@+id/register_countryText"
         android:layout_below="@id/register_cityValue"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="@string/country_text"/>
 
     <!-- Gender -->
     <TextView
@@ -206,7 +215,8 @@
         android:layout_toRightOf="@+id/register_countryText"
         android:layout_below="@id/radioGroup"
         android:ems="10"
-        android:inputType="datetime" />
+        android:inputType="datetime"
+        android:hint="@string/birthdate"/>
 
     <Button
         android:id="@+id/registerButton"
@@ -216,7 +226,7 @@
         android:layout_below="@+id/register_birthdateText"
         android:layout_marginTop="10dp"
         android:padding="20dp"
-        android:text="Salva"/>
+        android:text="@string/btnSaveText"/>
 
 </RelativeLayout>
 </ScrollView>
