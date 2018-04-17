@@ -88,15 +88,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 //attemptLogin();
-                callMenu();
+                callRegister();
             }
         });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-
-        //callMenu();
     }
 
     private void populateAutoComplete() {
@@ -353,8 +351,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
 
-    private void callMenu(){
-        Intent intent = new Intent(this, MenuActivity.class);
+
+
+    private void callRegister(){
+        Intent intent = new Intent(this, RegisterActivity.class);
         //EditText editText = (EditText) findViewById(R.id.);
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);
