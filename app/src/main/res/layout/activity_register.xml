@@ -1,9 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <!-- FirstName -->
+    <TextView
+        android:id="@+id/register_firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="Nome: "/>
+
+    <EditText
+        android:id="@+id/register_firstNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_firstNameText"
+        android:layout_marginLeft="26dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <!-- LastName -->
+    <TextView
+        android:id="@+id/register_lastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_firstNameText"
+        android:text="Cognome: "/>
+
+    <EditText
+        android:id="@+id/register_lastNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_lastNameText"
+        android:layout_below="@+id/register_firstNameValue"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <!-- Username -->
+    <TextView
+        android:id="@+id/register_usarnameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_lastNameText"
+        android:text="Usarname: "/>
+
+    <EditText
+        android:id="@+id/register_usarnameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_usarnameText"
+        android:layout_below="@+id/register_lastNameValue"
+        android:paddingTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <!-- Email -->
+    <TextView
+        android:id="@+id/register_emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_usarnameText"
+        android:text="Email: "/>
+
+    <EditText
+        android:id="@+id/register_emailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_emailText"
+        android:layout_below="@+id/register_usarnameValue"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="29dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+    
+    <!-- Password -->
+    <TextView
+        android:id="@+id/register_passwordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_emailText"
+        android:text="Inserisci password: "/>
+
+    <EditText
+        android:id="@+id/register_passwordValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_passwordText"
+        android:layout_below="@id/register_emailText"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/register_passwordTextValidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_passwordText"
+        android:text="Rinserisci password: "/>
+
+    <EditText
+        android:id="@+id/register_passwordValueValidate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/register_passwordTextValidate"
+        android:layout_below="@id/register_passwordValue"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <!-- City -->
+    <TextView
+        android:id="@+id/register_cityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_passwordTextValidate"
+        android:text="City: "/>
+    <!-- Country -->
+    <TextView
+        android:id="@+id/register_countryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_cityText"
+        android:text="Country: "/>
+
+
+    <!-- Gender -->
+    <TextView
+        android:id="@+id/register_genderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_countryText"
+        android:text="Gender: "/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_countryText"
+        android:layout_toRightOf="@id/register_genderText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="163dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/register_countryText"
+            android:layout_toRightOf="@id/register_genderText"
+            android:layout_weight="1"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/register_countryText"
+            android:layout_toRightOf="@id/register_genderText"
+            android:layout_weight="1"
+
+            android:text="Female" />
+    </RadioGroup>
+
+
+    <!-- Birthdate -->
+
+
+</RelativeLayout>
