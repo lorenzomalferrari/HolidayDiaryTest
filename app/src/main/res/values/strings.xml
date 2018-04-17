@@ -53,7 +53,8 @@
         venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
         sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
         Nullam finibus commodo odio, vel placerat ante luctus in. Nam ut nunc eu eros sollicitudin
-        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.</string>
+        rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.
+    </string>
 
     <string name="terms_text">Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
         molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
@@ -64,6 +65,7 @@
         maximus. Nulla facilisi. Cras sed massa leo. Etiam consequat justo ut erat venenatis aliquet.
         Pellentesque luctus, neque et suscipit lobortis, sapien nulla vestibulum massa, a pharetra
         lorem turpis at dui. Aliquam malesuada, lacus sit amet efficitur faucibus, dui urna pretium
-        massa, id lacinia risus ante at diam.</string>
+        massa, id lacinia risus ante at diam.
+    </string>
 
 </resources>
