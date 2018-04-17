@@ -3,16 +3,13 @@ package com.lorenzomalferrari.holidaydiary;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
 import android.content.Intent;
+
+//My import
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = "malfe.lore@gmail.com";
                 String password = "123456";
                 //if profilo esiste già
-                if (emailText.getText().toString().equals(email) && passwordText.getText().toString().equals(password) && isEmailValid(email) && isPasswordValid(password)){
+                if (emailText.getText().toString().equals(email) && passwordText.getText().toString().equals(password)){
                     callMenu();
                 }
                 //else vai a crearti il profilo
@@ -71,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    //Metodo funzionante e testato
+    //Da usare per controllo durante la registrazione
     private boolean isEmailValid(String email) {
         //L'email deve contenere il campo @
         if (email.contains("@") == true){
@@ -81,6 +80,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+    //Metodo funzionante e testato
+    //Da usare per controllo durante la registrazione
     private boolean isPasswordValid(String password) {
         //La passowrd deve essere lunga almeno 6 caratteri
         if ((password.length() >= 6) == true){
