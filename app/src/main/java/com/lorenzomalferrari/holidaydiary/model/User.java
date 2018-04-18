@@ -270,6 +270,14 @@ public class User {
     }
 
     /**
+     *
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
      * Textual representation of the user
      * @return user
      */

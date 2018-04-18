@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.content.Intent;
 
 //My import
+import com.lorenzomalferrari.holidaydiary.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailText, passwordText;
     private View mProgressView;
     private View mLoginFormView;
+    private User user = new User("lorenzomalfe","malfe.lore@gmail.com","123456");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +53,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = "malfe.lore@gmail.com";
-                String password = "123456";
                 //if profilo esiste già
-                if (emailText.getText().toString().equals(email) && passwordText.getText().toString().equals(password)){
+                if (emailText.getText().toString().equals(user.getEmail()) && passwordText.getText().toString().equals(user.getPassword())){
                     callMenu();
                 }
                 //else vai a crearti il profilo
