@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/register_passwordText"
         android:layout_below="@id/register_emailText"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="11dp"
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/insertPasswordTextView" />
