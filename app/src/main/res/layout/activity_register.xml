@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <!-- FirstName -->
@@ -215,6 +215,9 @@
         android:ems="10"
         android:inputType="datetime"
         android:hint="@string/birthdateEditText"/>
+
+
+    <!-- Save Botton -->
 
     <Button
         android:id="@+id/registerButton"
