@@ -58,4 +58,16 @@ public class PasswordValidator {
         }
         return flag;
     }
+
+
+    //Procedimento per la creazione del metodo di verifica della password
+    //- lunghezza
+    //presenza di una maiuscola e di una minuscola
+    //mancata presenza di caratteri speciali o lettere con accenti 1
+    private char[] arrayChar = {'a','b'};
+    private char[] arraySpecialChar = {'!','"','£','$','%','&','/','(',')','=','?','\''};
+
+
+
+    //Documentarsi nella java doc se esiste già var statiche che contengono i caratteri speciali
 }
