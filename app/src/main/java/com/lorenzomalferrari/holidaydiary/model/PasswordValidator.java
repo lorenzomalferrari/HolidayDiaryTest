@@ -37,7 +37,7 @@ public class PasswordValidator {
 
 
     /**
-     *
+     * Metodo che controlla la validità della password
      * @return
      *  - true se la password rispecchia i requisiti minimi
      *  - false se non li rispetta
@@ -47,8 +47,8 @@ public class PasswordValidator {
         //controllo la lunghezza
         if (isLengthCorrect(password) == true){
             //controllo i singoli caratteri della password per verificare se contiene le richieste specifiche
-            for(int i = 0; i <= password.length(); i++){
-                //password.charAt(i) = 'M';
+            for(int i = 0; i <= password.length(); i++) {
+                //boolean b = (password.indexOf(i)) == "@";
             }
             flag = true;
         }
