@@ -46,8 +46,8 @@ public class EmailValidator {
         EmailValidator emailV = new EmailValidator();
         boolean v = emailV.validateEmail("malfe.lore@gmail.com");// email giusta
         boolean v2 = emailV.validateEmail("malfe.loregmail.com");// email sbagliata
-        System.out.println(v);
-        System.out.println(v2);
+        System.out.println(v);  //True
+        System.out.println(v2); //False
         System.out.println("-----------------------------");
     }*/
 }
