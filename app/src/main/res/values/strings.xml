@@ -51,7 +51,7 @@
     <string name="numberVersion">Version 1.0.5</string>
     <string name="birthdate">Birthdate</string>
     <string name="copyright">All rights reserved</string>
-    <string name="btnSaveText">Save</string>
+
 
     <string name="privacy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
         at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
@@ -73,6 +73,29 @@
         massa, id lacinia risus ante at diam.
     </string>
 
+
+
+    <!-- Testo per la activity Registrazione -->
+    <string name="firstNameTextView">FirstName:</string>
+    <string name="firstNameEditText">FirstName</string>
+    <string name="lastNameTextView">LastName:</string>
+    <string name="lastNameEditText">LastName</string>
+    <string name="usarnameTextView">Usarname:</string>
+    <string name="usarnameEditText">Usarname</string>
+    <string name="emailTextView">Email:</string>
+    <string name="emailEditText">Email</string>
+    <string name="insertPasswordTextView">Inserisci password:</string>
+    <string name="confirmPasswordTextView">Conferma password:</string>
+    <string name="cityTextView">City:</string>
+    <string name="cityEditText">City</string>
+    <string name="countryTextView">Country:</string>
+    <string name="countryEditText">Country</string>
+    <string name="genderTextView">Gender:</string>
+    <string name="maleRadioButton">Male</string>
+    <string name="femaleRadioButton">Female</string>
+    <string name="birthdateTextView">Birthdate:</string>
+    <string name="birthdateEditText">Birthdate</string>
+    <string name="btnSaveText">Save</string>
 
 
 
