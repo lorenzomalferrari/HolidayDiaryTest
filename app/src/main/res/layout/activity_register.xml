@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="Nome: "/>
+        android:text="@string/firstName"/>
 
     <EditText
         android:id="@+id/register_firstNameValue"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_below="@+id/register_firstNameText"
-        android:text="Cognome: "/>
+        android:text="@string/lastName"/>
 
     <EditText
         android:id="@+id/register_lastNameValue"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_below="@+id/register_lastNameText"
-        android:text="Usarname: "/>
+        android:text="@string/usarname"/>
 
     <EditText
         android:id="@+id/register_usarnameValue"
