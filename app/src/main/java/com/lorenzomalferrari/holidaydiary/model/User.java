@@ -108,7 +108,7 @@ public class User {
      */
     private boolean emailValidation(String string){
 
-        /* METODO DA VERIFICARE */
+        /* METODO DA VERIFICARE PER LA REGISTRAZIONE */
 
         //Create EmailValidator Object
         EmailValidator emailValidator = new EmailValidator();
