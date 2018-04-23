@@ -35,6 +35,7 @@ public class MenuActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //add this line to display menu1 when the activity is loaded
+        /* Modificare in modo che legga lo stato della pagina così se ruoto tel non cambia la situazione */
         displaySelectedScreen(R.id.nav_homepage);
     }
 
@@ -100,6 +101,7 @@ public class MenuActivity extends AppCompatActivity
                 fragment = new PicturesFragment();
                 break;
             case R.id.nav_position:
+
                 fragment = new PositionFragment();
                 break;
             case R.id.nav_account:
