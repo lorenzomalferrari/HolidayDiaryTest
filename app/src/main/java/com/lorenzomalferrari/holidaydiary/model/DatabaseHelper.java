@@ -45,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * Creazione della tabella
      * @param db
      */
     @Override
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * Aggiornamento della tabella
      * @param db
      * @param oldVersion
      * @param newVersion
@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * Inserimento dell'utente nel database
      * @param arrayList
      * @return
      */
@@ -102,7 +102,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * Restituzione di tutti i dati inseriti nella tabella
      * @return
      */
     public Cursor getAllData(){
@@ -121,5 +121,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT id FROM "+ TABLE_NAME + " WHERE email = "+ email + " AND password = "+password,null);
         return cursor;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean upDateData(){
+
     }
 }
