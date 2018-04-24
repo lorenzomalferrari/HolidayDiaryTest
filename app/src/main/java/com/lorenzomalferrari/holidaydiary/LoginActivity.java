@@ -1,5 +1,6 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,8 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.Toast;
 
 //My import
+import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 import com.lorenzomalferrari.holidaydiary.model.User;
 
 import java.util.ArrayList;
@@ -25,11 +28,13 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private User user = new User("lorenzomalfe","malfe.lore@gmail.com","123456");
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        databaseHelper  = new DatabaseHelper(this);
         // Set up the login form.
         emailText = findViewById(R.id.email); //email inserita dall'utente
         passwordText = findViewById(R.id.password); //password inserita dall'utente
@@ -40,7 +45,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //interrogo il db per sapere se email e password sono già presenti e se hanno lo stesso id
-
+                Cursor c = databaseHelper.getDataLogin(emailText.getText().toString(),passwordText.getText().toString());
+                Toast.makeText(LoginActivity.this,c.getInt(0),Toast.LENGTH_LONG).show();
                 //if profilo esiste già
                 if (emailText.getText().toString().equals(user.getEmail()) && passwordText.getText().toString().equals(user.getPassword())){
                     callMenu();
