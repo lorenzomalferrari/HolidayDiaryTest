@@ -44,13 +44,16 @@ public class RegisterActivity extends AppCompatActivity {
                 //Inserisco i dati nel database
                 boolean isInserted = databaseHelper.insertData(createArrayList());
                 //Notifico all'utente il fatto che laregistrazione è stata effettuata o meno
-                if (isInserted == true)
+                if (isInserted == true){
                     Toast.makeText(RegisterActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(RegisterActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
-                //Chiamo il Menu dell'applicazione
-                callMenu();
+                    //Chiamo il Menu dell'applicazione
+                    callMenu();
+                }
 
+                else{
+                    Toast.makeText(RegisterActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
+
+                }
             }
         });
     }
@@ -107,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
         // Gender
         gender = getRadioButtonChecked();
         // bntRegister
-        btnRegister =  findViewById(R.id.registerButton);
+        //btnRegister =  findViewById(R.id.registerButton);
     }
 
     /**
