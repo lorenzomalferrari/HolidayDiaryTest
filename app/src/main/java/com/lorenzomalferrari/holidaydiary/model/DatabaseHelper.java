@@ -36,11 +36,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_13 = "last_login";// Si compila da solo
 
     /**
-     *
+     * Costruttore di default
      * @param context
      */
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
+        //An object for create and/or open a database that will be used for reading and writing.
         SQLiteDatabase db = this.getWritableDatabase();
     }
 

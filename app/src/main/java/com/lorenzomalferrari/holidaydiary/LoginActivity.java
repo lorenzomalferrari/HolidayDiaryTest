@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         databaseHelper  = new DatabaseHelper(this);
+
         // Set up the login form.
         emailText = findViewById(R.id.email); //email inserita dall'utente
         passwordText = findViewById(R.id.password); //password inserita dall'utente
