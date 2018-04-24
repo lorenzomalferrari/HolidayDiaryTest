@@ -13,25 +13,19 @@ import android.view.ViewGroup;
  * A simple {@link Fragment} subclass.
  */
 public class PositionFragment extends Fragment {
-
-
     public PositionFragment() {
         // Required empty public constructor
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_position, container, false);
     }
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle(R.string.position);
     }
-
 }
