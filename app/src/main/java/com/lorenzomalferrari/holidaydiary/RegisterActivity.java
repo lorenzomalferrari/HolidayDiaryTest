@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     /**
-     * 
+     *
      * @return
      */
     private RadioButton getRadioButtonChecked(){
