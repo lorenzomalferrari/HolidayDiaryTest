@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Compilo i campi con i dati inseriti dall'utente
      */
     private void getContent() {
         // FirstName
@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Metodo per ottenere il radioButton selezionato
      * @return
      */
     private RadioButton getRadioButtonChecked(){
