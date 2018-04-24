@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailText, passwordText;
     private View mProgressView;
     private View mLoginFormView;
-    private User user = new User("lorenzomalfe","malfe.lore@gmail.com","123456");
+    private User user = new User("malfe.lore@gmail.com","123456");
     DatabaseHelper databaseHelper;
 
     @Override
@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.password); //password inserita dall'utente
 
         //Esecuzione del bottone e rispettivo controllo dei dati inseriti
-        Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
