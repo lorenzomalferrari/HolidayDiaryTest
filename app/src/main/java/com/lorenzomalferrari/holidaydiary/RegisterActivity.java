@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
@@ -32,32 +33,46 @@ public class RegisterActivity extends AppCompatActivity {
         //Setto le mie variabili con i dati che mi arrivano dai campi
         getContent();
 
-        Button saveButon = (Button) findViewById(R.id.registerButton);
+        Button saveButon = findViewById(R.id.registerButton);
         saveButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //attemptLogin();
+                //Ottengo i valori inseriti nei campi della Register Activity
+                getContent();
+                //Controllo che i campi siano corretti prima di salvarli
+
+                //Inserisco i dati nel database
+                boolean isInserted = databaseHelper.insertData(createArrayList());
+                //Notifico all'utente il fatto che laregistrazione è stata effettuata o meno
+                if (isInserted == true)
+                    Toast.makeText(RegisterActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(RegisterActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
+                //Chiamo il Menu dell'applicazione
                 callMenu();
 
             }
         });
     }
 
+    /**
+     * Metodo che mi consente di raggruppare tutti i valori presi dalla registrazione
+     * @return un oggetto di classe ArrayList
+     */
     private ArrayList createArrayList(){
         ArrayList arrayList = new ArrayList();
-        arrayList.add()
+        arrayList.add(firstName.getText().toString());
+        arrayList.add(lastName.getText().toString());
+        arrayList.add(username.getText().toString());
+        arrayList.add(password.getText().toString());
+        arrayList.add(email.getText().toString());
+        arrayList.add(city.getText().toString());
+        arrayList.add(country.getText().toString());
+        arrayList.add(gender.getText().toString());
+        arrayList.add(birthdate.getText().toString());
         return arrayList;
     }
 
-    public void addData(){
-        btnRegister.setOnClickListener(
-                new View.OnClickListener(){
-                    public void onClick(View v){
-                        databaseHelper.insertData(createArrayList());
-                    }
-                }
-        );
-    }
 
     /**
      * Chiamo il Menu dell'applicazione (Navigation Drawer Activity)
@@ -72,27 +87,27 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private void getContent() {
         // FirstName
-        firstName = (EditText) findViewById(R.id.register_firstNameValue);
+        firstName = findViewById(R.id.register_firstNameValue);
         // LastName
-        lastName = (EditText) findViewById(R.id.register_lastNameValue);
+        lastName = findViewById(R.id.register_lastNameValue);
         // Username
-        username = (EditText) findViewById(R.id.register_usarnameValue);
+        username =  findViewById(R.id.register_usarnameValue);
         // Password
-        password = (EditText) findViewById(R.id.register_passwordValue);
+        password =  findViewById(R.id.register_passwordValue);
         // Confirm Password
-        conf_password = (EditText) findViewById(R.id.register_passwordValueValidate);
+        conf_password =  findViewById(R.id.register_passwordValueValidate);
         // Email
-        email = (EditText) findViewById(R.id.register_emailValue);
+        email =  findViewById(R.id.register_emailValue);
         // City
-        city = (EditText) findViewById(R.id.register_cityValue);
+        city =  findViewById(R.id.register_cityValue);
         // Country
-        country = (EditText) findViewById(R.id.register_countryValue);
+        country =  findViewById(R.id.register_countryValue);
         // Birthdate
-        birthdate = (EditText) findViewById(R.id.register_birthdateValue);
+        birthdate =  findViewById(R.id.register_birthdateValue);
         // Gender
         gender = getRadioButtonChecked();
         // bntRegister
-        btnRegister = (Button) findViewById(R.id.registerButton);
+        btnRegister =  findViewById(R.id.registerButton);
     }
 
     /**
@@ -100,12 +115,28 @@ public class RegisterActivity extends AppCompatActivity {
      * @return
      */
     private RadioButton getRadioButtonChecked(){
-        RadioButton radioMale = (RadioButton) findViewById(R.id.radioButtonMale);
-        RadioButton radioFemale = (RadioButton) findViewById(R.id.radioButtonFemale);
+        RadioButton radioMale =  findViewById(R.id.radioButtonMale);
+        RadioButton radioFemale =  findViewById(R.id.radioButtonFemale);
         if (radioMale.isChecked() == true){
             return radioMale;
         }
         else
             return radioFemale;
+    }
+
+    /**
+     * Controllo della password per la validazione
+     * @return true se è ok false e non è ok
+     */
+    private boolean canvalidPassword(){
+        boolean isConvalid = false;
+        //Prima controllo che password e conf_password siano uguali
+        if (password.getText().toString().equals(conf_password.getText().toString()) == true){
+            //Controllo che password > 6 char
+
+        }
+
+        //Controllo che password non contenga lettere strane
+        return isConvalid;
     }
 }
