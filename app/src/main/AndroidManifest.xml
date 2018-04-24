@@ -50,16 +50,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
+        <!--<activity
             android:name=".MyPositionActivity"
             android:label="@string/title_activity_my_position">
 
-           <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
+            </intent-filter>
+        </activity>-->
     </application>
 
 </manifest>

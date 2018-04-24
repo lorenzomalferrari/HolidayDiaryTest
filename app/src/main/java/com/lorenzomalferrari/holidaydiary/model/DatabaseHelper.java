@@ -14,10 +14,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * Nome del file dove sarà contenuto tutto il database
      */
     public static final String DATABASE_NAME = "holidayDiary.db";
+
     /**
      * Nome della tabella contenente tutti gli utenti e con i loro rispettivi dati
      */
     public static final String TABLE_NAME = "User";
+
     /**
      * Lista delle colonne presenti nella tabella User
      */
@@ -34,6 +36,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_11 = "birthdate";
     public static final String COL_12 = "registration_date"; // Si compila da solo
     public static final String COL_13 = "last_login";// Si compila da solo
+
+    /**
+     * Lista delle colonne presenti nella tabella User
+     * (Tecnica alternativa)
+     */
+    String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
+            "city","country","gender","age","birthdate","registration_date","last_login"};
 
     /**
      * Costruttore di default
@@ -59,8 +68,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "email VARCHAR(255)," +
                 "city VARCHAR(255)," +
                 "country VARCHAR(255)," +
-                "gender CHAR(1)" +
-                ",age VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
                 "birthdate DATE," +
                 "registration_date DATETIME," +
                 "last_login DATETIME)");
@@ -120,7 +129,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public Cursor getDataLogin(String email, String password){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id FROM "+ TABLE_NAME + " WHERE email = "+ email + " AND password = "+password,null);
+        Cursor cursor = db.rawQuery("SELECT id FROM "+ TABLE_NAME + " WHERE email = "+ email +
+                " AND password = "+password,null);
         return cursor;
     }
 

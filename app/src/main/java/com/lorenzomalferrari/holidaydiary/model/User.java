@@ -37,12 +37,10 @@ public class User {
     /**
      * Main Costructor
      * They are required fields
-     * @param username
      * @param email
      * @param password
      */
-    public User(String username, String email, String password) {
-        this.username = username;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
