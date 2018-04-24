@@ -111,6 +111,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        return cursor;
     }
 
+    /**
+     *
+     * @param email
+     * @param password
+     * @return
+     */
     public Cursor getDataLogin(String email, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT id FROM "+ TABLE_NAME + " WHERE email = "+ email + " AND password = "+password,null);
