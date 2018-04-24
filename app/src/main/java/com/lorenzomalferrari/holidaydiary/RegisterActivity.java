@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
@@ -41,6 +43,25 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    private ArrayList createArrayList(){
+        ArrayList arrayList = new ArrayList();
+        arrayList.add()
+        return arrayList;
+    }
+
+    public void addData(){
+        btnRegister.setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        databaseHelper.insertData(createArrayList());
+                    }
+                }
+        );
+    }
+
+    /**
+     * Chiamo il Menu dell'applicazione (Navigation Drawer Activity)
+     */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
