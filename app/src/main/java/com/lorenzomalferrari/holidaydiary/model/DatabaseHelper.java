@@ -74,19 +74,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData(ArrayList arrayList){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1,arrayList.get(0).toString());
-        contentValues.put(COL_2,arrayList.get(1).toString());
-        contentValues.put(COL_3,arrayList.get(2).toString());
-        contentValues.put(COL_4,arrayList.get(3).toString());
-        contentValues.put(COL_5,arrayList.get(4).toString());
-        contentValues.put(COL_6,arrayList.get(5).toString());
-        contentValues.put(COL_7,arrayList.get(6).toString());
-        contentValues.put(COL_8,arrayList.get(7).toString());
-        contentValues.put(COL_9,arrayList.get(8).toString());
-        contentValues.put(COL_10,arrayList.get(9).toString());
-        contentValues.put(COL_11,arrayList.get(10).toString());
-        contentValues.put(COL_12,arrayList.get(11).toString());
-        contentValues.put(COL_13,arrayList.get(12).toString());
+        contentValues.put(COL_2,arrayList.get(0).toString());
+        contentValues.put(COL_3,arrayList.get(1).toString());
+        contentValues.put(COL_4,arrayList.get(2).toString());
+        contentValues.put(COL_5,arrayList.get(3).toString());
+        contentValues.put(COL_6,arrayList.get(4).toString());
+        contentValues.put(COL_7,arrayList.get(5).toString());
+        contentValues.put(COL_8,arrayList.get(6).toString());
+        contentValues.put(COL_9,arrayList.get(7).toString());
+        contentValues.put(COL_10,arrayList.get(8).toString());
+        contentValues.put(COL_11,arrayList.get(9).toString());
+        contentValues.put(COL_12,arrayList.get(10).toString());
+        contentValues.put(COL_13,arrayList.get(11).toString());
         long isInsert = db.insert(TABLE_NAME,null,contentValues);
         if (isInsert == -1)
             return false;
