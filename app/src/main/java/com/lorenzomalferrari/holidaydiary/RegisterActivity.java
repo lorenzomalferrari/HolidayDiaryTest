@@ -27,12 +27,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        //
         databaseHelper  = new DatabaseHelper(this);
-
         //Setto le mie variabili con i dati che mi arrivano dai campi
         getContent();
-
+        //
         Button saveButon = findViewById(R.id.registerButton);
         saveButon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
                     //Chiamo il Menu dell'applicazione
                     callMenu();
                 }
-
                 else{
                     Toast.makeText(RegisterActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
@@ -136,7 +134,6 @@ public class RegisterActivity extends AppCompatActivity {
         //Prima controllo che password e conf_password siano uguali
         if (password.getText().toString().equals(conf_password.getText().toString()) == true){
             //Controllo che password > 6 char
-
         }
 
         //Controllo che password non contenga lettere strane
