@@ -128,6 +128,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @return
      */
     public boolean upDateData(){
-
+        return true;
     }
 }
