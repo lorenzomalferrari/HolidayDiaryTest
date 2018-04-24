@@ -45,8 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //interrogo il db per sapere se email e password sono già presenti e se hanno lo stesso id
-                Cursor c = databaseHelper.getDataLogin(emailText.getText().toString(),passwordText.getText().toString());
-                Toast.makeText(LoginActivity.this,c.getString(0),Toast.LENGTH_LONG).show();
+
                 //if profilo esiste già
                 if (emailText.getText().toString().equals(user.getEmail()) && passwordText.getText().toString().equals(user.getPassword())){
                     callMenu();
