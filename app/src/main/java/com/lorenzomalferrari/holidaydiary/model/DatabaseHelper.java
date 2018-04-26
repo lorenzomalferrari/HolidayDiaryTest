@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Lista delle colonne presenti nella tabella User
      */
-    public static final String COL_1 = "id"; // Si compila da solo
+    /*public static final String COL_1 = "id"; // Si compila da solo
     public static final String COL_2 = "firstName";
     public static final String COL_3 = "lastName";
     public static final String COL_4 = "username";
@@ -35,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_10 = "age";
     public static final String COL_11 = "birthdate";
     public static final String COL_12 = "registration_date"; // Si compila da solo
-    public static final String COL_13 = "last_login";// Si compila da solo
+    public static final String COL_13 = "last_login";// Si compila da solo*/
 
     /**
      * Lista delle colonne presenti nella tabella User
@@ -51,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         //An object for create and/or open a database that will be used for reading and writing.
-        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
     /**
@@ -60,6 +60,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //Creazione delle tabelle
+        //Utenti -- Note -- Viaggi -- Immagini -- Posizioni
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
@@ -95,15 +97,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData(ArrayList arrayList){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,arrayList.get(0).toString());
-        contentValues.put(COL_3,arrayList.get(1).toString());
-        contentValues.put(COL_4,arrayList.get(2).toString());
-        contentValues.put(COL_5,arrayList.get(3).toString());
-        contentValues.put(COL_6,arrayList.get(4).toString());
-        contentValues.put(COL_7,arrayList.get(5).toString());
-        contentValues.put(COL_8,arrayList.get(6).toString());
-        contentValues.put(COL_9,arrayList.get(7).toString());
-        contentValues.put(COL_11,arrayList.get(8).toString());
+        contentValues.put(COL_TABLE[1],arrayList.get(0).toString());
+        contentValues.put(COL_TABLE[2],arrayList.get(1).toString());
+        contentValues.put(COL_TABLE[3],arrayList.get(2).toString());
+        contentValues.put(COL_TABLE[4],arrayList.get(3).toString());
+        contentValues.put(COL_TABLE[5],arrayList.get(4).toString());
+        contentValues.put(COL_TABLE[6],arrayList.get(5).toString());
+        contentValues.put(COL_TABLE[7],arrayList.get(6).toString());
+        contentValues.put(COL_TABLE[8],arrayList.get(7).toString());
+        contentValues.put(COL_TABLE[10],arrayList.get(8).toString());
         long isInsert = db.insert(TABLE_NAME,null,contentValues);
         if (isInsert == -1)
             return false;
@@ -119,6 +121,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        SQLiteDatabase db = this.getWritableDatabase();
        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
        return cursor;
+    }
+    public Cursor getData(String email,String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
+        return res;
     }
 
     /**

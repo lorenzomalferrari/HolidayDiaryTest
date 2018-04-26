@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 //My import
@@ -24,10 +25,8 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
 
     // UI references.
-    private EditText emailText, passwordText;
-    private View mProgressView;
-    private View mLoginFormView;
-    private User user = new User("malfe.lore@gmail.com","123456");
+    private EditText email, password;
+    private Button btnLogin;
     DatabaseHelper databaseHelper;
 
     @Override
@@ -36,68 +35,40 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         databaseHelper  = new DatabaseHelper(this);
 
-        // Set up the login form.
-        emailText = findViewById(R.id.email); //email inserita dall'utente
-        passwordText = findViewById(R.id.password); //password inserita dall'utente
+        databaseHelper = new DatabaseHelper(this);
+        btnLogin = findViewById(R.id.btnLogin);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
 
-        //Esecuzione del bottone e rispettivo controllo dei dati inseriti
-        Button btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //interrogo il db per sapere se email e password sono già presenti e se hanno lo stesso id
-
-                //if profilo esiste già
-                if (emailText.getText().toString().equals(user.getEmail()) && passwordText.getText().toString().equals(user.getPassword())){
-                    callMenu();
-                }
-                //else vai a crearti il profilo
-                else{
-                    callRegister();
-                }
-            }
-        });
-
-        //mLoginFormView = findViewById(R.id.login_form);
-        //mProgressView = findViewById(R.id.login_progress);
-
+        checkLogin();
     }
 
-    //Metodo funzionante e testato
-    //Da usare per controllo durante la registrazione
-    private boolean isEmailValid(String email) {
-        //L'email deve contenere il campo @
-        if (email.contains("@") == true){
-            return true;
-        }
-        else {
-            return false;
-        }
+    public void checkLogin() {
+        btnLogin.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
+                        if(res.getCount() == 0) {
+                            callRegister();
+                        }
+                        else {
+                            callMenu();
+                        }
+                    }
+                }
+        );
     }
 
-
-    //Metodo funzionante e testato
-    //Da usare per controllo durante la registrazione
-    private boolean isPasswordValid(String password) {
-        //La passowrd deve essere lunga almeno 6 caratteri
-        if ((password.length() >= 6) == true){
-            return true;
-        }
-        else {
-            return false;
-        }
+    //Chiama la MenuActivity (Navigation Drawer Activity)
+    private void callMenu(){
+        Intent intent = new Intent(this, MenuActivity.class);
+        this.startActivity(intent);
     }
 
     //Chiama la RegisterActivity
     private void callRegister(){
         Intent intent = new Intent(this, RegisterActivity.class);
-        this.startActivity(intent);
-    }
-
-
-    //Chiama la MenuActivity (Navigation Drawer Activity)
-    private void callMenu(){
-        Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
     }
 
