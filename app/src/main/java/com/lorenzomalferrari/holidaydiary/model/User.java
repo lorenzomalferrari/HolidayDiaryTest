@@ -109,9 +109,9 @@ public class User {
         /* METODO DA VERIFICARE PER LA REGISTRAZIONE */
 
         //Create EmailValidator Object
-        EmailValidator emailValidator = new EmailValidator();
+        Validator validator = new Validator();
         //Create boolean var for to save the result
-        boolean isCorrect = emailValidator.validateEmail(string);
+        boolean isCorrect = validator.validateEmail(string);
         return isCorrect;
     }
 
