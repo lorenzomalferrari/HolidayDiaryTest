@@ -17,4 +17,13 @@
         - 1 post Immagini
         - 1 post Position
     -->
+
+
+    <Button
+        android:id="@+id/bntVisualizzaDatiTabella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visualizza dati della tabella"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
