@@ -50,7 +50,7 @@ public class HomePageFragment extends Fragment {
                         Cursor cursor = databaseHelper.getAllData();
                         if (cursor.getCount() == 0){
                             //show message
-                            showMessage("Errore","Trovo niente");
+                            //showMessage("Errore","Trovo niente");
                             return;
                         }
                         else {
@@ -65,19 +65,19 @@ public class HomePageFragment extends Fragment {
                             }
 
                             // show all data
-                            showMessage("Data",buffer.toString());
+                            //showMessage("Data",buffer.toString());
                         }
                     }
                 }
         );
     }
 
-    public void showMessage(String title, String Message){
+    /*public void showMessage(String title, String Message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(Message);
         builder.show();
-    }
+    }*/
 
 }
