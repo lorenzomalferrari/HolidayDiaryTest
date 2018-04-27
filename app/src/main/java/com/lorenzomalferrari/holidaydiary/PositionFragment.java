@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -26,6 +25,6 @@ public class PositionFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle(R.string.position);
+        getActivity().setTitle("Position");
     }
 }

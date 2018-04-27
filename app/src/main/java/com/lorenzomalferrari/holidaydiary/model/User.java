@@ -1,42 +1,31 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * Class representative of the User and his data
- * @author lorenzomalferrari.com
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
  */
 public class User {
 
-    private String username, firstName, lastName, email, password, city, country;
-    private char gender/* M o F*/;
-    private int age;
-    private Date birthdate;
+    /**
+     *
+     */
+    private int id, age;
+    private String firstName, lastName, username, password, email, city, country;
+    private char gender;
+    private Date birthdate, registration_date, last_login;
 
     /**
-     * Default constructor for the test
-     * User with precompiled fields
+     *
      */
     public User() {
-        this.username = "user";
-        this.firstName = "User";
-        this.lastName = "User";
-        this.email = "user@user.com";
-        this.password = "user";
-        this.gender = 'M';
-        this.city = "User";
-        this.country = "User";
-        this.age = 1; // creare una funzione che presa la data di nascita e la data di oggi....calcoli l'età...se birthdate = null non calcoli
-        this.birthdate = new Date();
+        this.id = 0;
     }
 
+
     /**
-     * Main Costructor
-     * They are required fields
+     *
      * @param email
      * @param password
      */
@@ -46,245 +35,148 @@ public class User {
     }
 
     /**
-     * User Costructor
-     * Complete constructor if the User compiles all the fields
-     * @param username
+     *
+     * @param id
      * @param firstName
      * @param lastName
-     * @param email
-     * @param password
-     * @param gender
-     * @param city
-     * @param country
-     * @param birthdate
-     */
-    public User(String username, String firstName, String lastName, String email, String password, char gender, String city, String country, Date birthdate) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.gender = gender;
-        this.city = city;
-        this.country = country;
-        this.age = calcAge();
-        this.birthdate = birthdate;
-    }
-
-
-
-    /**
-     * Metodo per calcolare l'età dell'utente
-     */
-    private int calcAge(){
-        int calcAge = 0;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1;
-        try {
-            date1 = sdf.parse("1997-05-21");
-            // se l'utente ha inserito la data di nascita, calcoliamo la sua età
-            if (date1 != null) {
-                //prendo data di oggi
-                Date today = new Date(System.currentTimeMillis());
-                //prendo data di nascita col costruttore
-
-                // calcolo age
-                calcAge = Integer.parseInt(today.toString().split(" ")[5]) - Integer.parseInt(date1.toString().split(" ")[5]);
-            }
-            // se no age = 0/null
-            else{
-                calcAge = 0;
-            }
-        } catch (ParseException ex) {
-            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return calcAge;
-    }
-
-    /**
-     * Validazione email
-     */
-    private boolean emailValidation(String string){
-
-        /* METODO DA VERIFICARE PER LA REGISTRAZIONE */
-
-        //Create EmailValidator Object
-        Validator validator = new Validator();
-        //Create boolean var for to save the result
-        boolean isCorrect = validator.validateEmail(string);
-        return isCorrect;
-    }
-
-    /**
-     * Method that returns the user's username
-     * @return username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * Method that allows you to change the username
      * @param username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * Method that returns the user's firstName
-     * @return firstName
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Method that allows you to change the firstName
-     * @param firstName
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Method that returns the user's lastName
-     * @return  lastName
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Method that allows you to change the lastName
-     * @param  lastName
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Method that returns the user's email
-     * @return email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Metodo che modifica l'email dell'utente
+     * @param password
      * @param email
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * Method that returns the user's gender
-     * @return
-     */
-    public char getGender() {
-        return gender;
-    }
-
-    /**
-     * Metodo che modifica il genere dell'utente
-     * @param gender
-     */
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
-
-    /**
-     * Method that returns the user's city
-     * @return city
-     */
-    public String getCity() {
-        return city;
-    }
-
-    /**
-     * Metodo che modifica la città dell'utente
      * @param city
-     */
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    /**
-     * Method that returns the user's country
-     * @return country
-     */
-    public String getCountry() {
-        return country;
-    }
-
-    /**
-     * Metodo che modifica lo stato dell'utente
      * @param country
+     * @param gender
+     * @param age
+     * @param birthdate
+     * @param registration_date
+     * @param last_login
      */
-    public void setCountry(String country) {
+    public User(int id, String firstName, String lastName, String username, String password, String email, String city, String country, char gender,int age, Date birthdate, Date registration_date, Date last_login) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.city = city;
         this.country = country;
+        this.gender = gender;
+        this.age = age;
+        this.birthdate = birthdate;
+        this.registration_date = registration_date;
+        this.last_login = last_login;
     }
 
-    /**
-     * Method that returns the user's age
-     * @return age
-     */
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getAge() {
         return age;
     }
 
-    /**
-     * Metodo che modifica l'età dell'utente
-     * @param age
-     */
     public void setAge(int age) {
         this.age = age;
     }
 
-    /**
-     * Method that returns the user's birthdate
-     * @return birthdate
-     */
-    public Date getBirthdate() {
-        return birthdate;
+    public String getFirstName() {
+        return firstName;
     }
 
-    /**
-     * Metodo che modifica la data di nascita dell'utente
-     * @param birthdate
-     */
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    /**
-     * Metodo che mi modifica la password dell'utente
-     * @param password
-     */
-    public void setPassword(String password) {
-        this.password = password;
+    public String getLastName() {
+        return lastName;
     }
 
-    /**
-     *
-     * @return password
-     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public Date getRegistration_date() {
+        return registration_date;
+    }
+
+    public void setRegistration_date(Date registration_date) {
+        this.registration_date = registration_date;
+    }
+
+    public Date getLast_login() {
+        return last_login;
+    }
+
+    public void setLast_login(Date last_login) {
+        this.last_login = last_login;
+    }
+
     /**
-     * Textual representation of the user
-     * @return user
+     * Rappresentazione testuale della classe User
+     * @return riga di testo con tutti gli attributi e i rispettivi valori
      */
     @Override
     public String toString() {
-        return "User{" + "username=" + username + ", firstName=" + firstName +
-                ", lastName=" + lastName + ", email=" + email + ", password=" + password +
-                ", gender=" + gender + ", city=" + city + ", country=" + country + ", age=" + age +
-                ", birthdate=" + birthdate + '}';
+        return "User{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password=" + password + ", email=" + email + ", city=" + city + ", country=" + country + ", gender=" + gender + ", age=" + age + ", birthdate=" + birthdate + ", registration_date=" + registration_date + ", last_login=" + last_login + '}';
     }
 
 }

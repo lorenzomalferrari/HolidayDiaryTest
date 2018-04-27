@@ -7,66 +7,66 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <!-- Immagine di sfondo -->
-    <!-- App name -->
-    <TextView
-        android:id="@+id/version_appName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp"
-        android:text="@string/app_name"
-        android:fontFamily="@font/cabin_bold"/>
-    <!-- Versione (Testo + numero)-->
-    <TextView
-        android:id="@+id/version_versionName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/version_appName"
-        android:padding="20dp"
-        android:text="@string/numberVersion"
-        android:fontFamily="@font/cabin_semi_bold_italic"/>
-    <!-- Immagine della App -->
-    <ImageView
-        android:id="@+id/version_imgApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/version_versionName"
-        android:layout_centerHorizontal="true"
-        android:padding="20dp"
-        android:src="@mipmap/ic_launcher_round"/>
-    <!-- Testo (Lorenzo Malferrari) -->
-    <TextView
-        android:id="@+id/version_authorName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/version_imgApp"
-        android:padding="20dp"
-        android:text="@string/author"
-        android:fontFamily="@font/cabin_bold_italic"/>
-    <!-- Testo (lorenzomalferrari.com) -->
-    <TextView
-        android:id="@+id/version_websiteName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="20dp"
-        android:layout_below="@id/version_authorName"
-        android:text="@string/website"
-        android:fontFamily="@font/cabin_italic"/>
-    <!-- All rights reserved-->
-    <TextView
-        android:id="@+id/version_copyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="20dp"
-        android:layout_below="@id/version_websiteName"
-        android:text="@string/copyright"
-        android:fontFamily="@font/cabin_italic"/>
+        <!-- Immagine di sfondo -->
+        <!-- App name -->
+        <TextView
+            android:id="@+id/version_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/cabin_bold"/>
+        <!-- Versione (Testo + numero)-->
+        <TextView
+            android:id="@+id/version_versionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/version_appName"
+            android:padding="20dp"
+            android:text="Versione 1"
+            android:fontFamily="@font/cabin_semi_bold_italic"/>
+        <!-- Immagine della App -->
+        <ImageView
+            android:id="@+id/version_imgApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/version_versionName"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:src="@mipmap/ic_launcher_round"/>
+        <!-- Testo (Lorenzo Malferrari) -->
+        <TextView
+            android:id="@+id/version_authorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/version_imgApp"
+            android:padding="20dp"
+            android:text="Lorenzo Malferrari"
+            android:fontFamily="@font/cabin_bold_italic"/>
+        <!-- Testo (lorenzomalferrari.com) -->
+        <TextView
+            android:id="@+id/version_websiteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:layout_below="@id/version_authorName"
+            android:text="www.lorenzomalferrari.com"
+            android:fontFamily="@font/cabin_italic"/>
+        <!-- All rights reserved-->
+        <TextView
+            android:id="@+id/version_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:layout_below="@id/version_websiteName"
+            android:text="@string/copyright"
+            android:fontFamily="@font/cabin_italic"/>
     </RelativeLayout>
 </ScrollView>

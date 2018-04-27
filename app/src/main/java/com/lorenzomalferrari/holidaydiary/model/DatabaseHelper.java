@@ -8,25 +8,26 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
-     *
+     * Nome del file del database
      */
     public static final String DATABASE_NAME = "holidayDiary.db";
+
     /**
-     *
+     * Nome della tabella degli Utenti
      */
     public static final String TABLE_NAME = "User";
+
     /**
      * Lista delle colonne presenti nella tabella User
-     * (Tecnica alternativa)
      */
     String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
             "city","country","gender","age","birthdate","registration_date","last_login"};
 
     /**
-     * Costructor
+     * Costruttore
      * @param context
      */
     public DatabaseHelper(Context context) {
@@ -34,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Creo la tabella nel database
+     * Creazione della tabella nel database
      * @param db
      */
     @Override
@@ -67,19 +68,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * Inserisco i dati nel database
+     * @param arrayList
+     * @return
+     */
     public boolean insertData(ArrayList arrayList) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TABLE[1],arrayList.get(0).toString());
-        contentValues.put(COL_TABLE[2],arrayList.get(1).toString());
-        contentValues.put(COL_TABLE[3],arrayList.get(2).toString());
-        contentValues.put(COL_TABLE[4],arrayList.get(3).toString());
-        contentValues.put(COL_TABLE[5],arrayList.get(4).toString());
-        contentValues.put(COL_TABLE[6],arrayList.get(5).toString());
-        contentValues.put(COL_TABLE[7],arrayList.get(6).toString());
-        contentValues.put(COL_TABLE[8],arrayList.get(7).toString());
+        contentValues.put(COL_TABLE[1],arrayList.get(0).toString());//nome
+        contentValues.put(COL_TABLE[2],arrayList.get(1).toString());//cognome
+        contentValues.put(COL_TABLE[3],arrayList.get(2).toString());//username
+        contentValues.put(COL_TABLE[4],arrayList.get(3).toString());//password
+        contentValues.put(COL_TABLE[5],arrayList.get(4).toString());//email
+        contentValues.put(COL_TABLE[6],arrayList.get(5).toString());//città
+        contentValues.put(COL_TABLE[7],arrayList.get(6).toString());//pease
+        contentValues.put(COL_TABLE[8],arrayList.get(7).toString());//sesso
         //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
-        contentValues.put(COL_TABLE[10],arrayList.get(8).toString());
+        contentValues.put(COL_TABLE[10],arrayList.get(8).toString());//data di nascita
         long result = db.insert(TABLE_NAME,null ,contentValues);
         if(result == -1)
             return false;
@@ -88,17 +94,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Ottengo tutti i dati degli utenti presenti all'interno del database
+     * Ottengo tutti i dati degli utenti presenti nella tabella
      * @return
      */
-    public Cursor getAllData() {
+    public Cursor getAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
 
     /**
-     * Ottengo tutti i dat dell'utente controllando i valori dei campi del login
+     * Ottengo tutti i dati di un utente preciso con i seguenti parametri
      * @param email
      * @param password
      * @return
@@ -110,7 +116,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Metodo ancora da costruire
+     * Non ancora implementato del tutto
      * @param id
      * @param firstName
      * @param lastName
@@ -129,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Cancello l'utente sapendo il suo id
+     * Elimino utente dalla tabella
      * @param id
      * @return
      */
@@ -140,8 +146,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     /**
-     * Metodo per calcolare l'età dell'utente
-     * P.S. : Metodo da mettere da qualche altra parte
+     * Calcolo l'età dell'utente usando data odierna e data di nascita inserita
+     * (Metodo ancora da costruire e da mettere in altra classe)
      * @return
      */
     public int calcAge(){

@@ -2,28 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/homepage"
-        android:id="@+id/textView"
+        android:text="View Users"
+        android:id="@+id/btnView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
-    <!--
-        Lista degli ultimi post caricati delle categorie :
-        - 1 post su Viaggi
-        - 1 post su Note
-        - 1 post Immagini
-        - 1 post Position
-    -->
-
-
-    <Button
-        android:id="@+id/bntVisualizzaDatiTabella"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Visualizza dati della tabella"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

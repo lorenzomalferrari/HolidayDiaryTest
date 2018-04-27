@@ -1,41 +1,26 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.content.Intent;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-//My import
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
-import com.lorenzomalferrari.holidaydiary.model.User;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * A login screen that offers login via email/password.
- */
 public class LoginActivity extends AppCompatActivity {
 
-    // UI references.
     Button btnLogin;
     EditText email,password;
     DatabaseHelper databaseHelper;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //
+
         databaseHelper = new DatabaseHelper(this);
-        //
         btnLogin = findViewById(R.id.btnLogin);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -49,12 +34,10 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
-                        if(res.getCount() == 0) {
-                            //Vado alla pagina di registrazione
+                        if(res.getCount() == 0 || res == null) {
                             callRegister();
                         }
                         else {
-                            //Entro nell'app
                             callMenu();
                         }
                     }
@@ -70,9 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Chiama la RegisterActivity
     private void callRegister(){
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, RegistrationActivity.class);
         this.startActivity(intent);
     }
-
 }
-

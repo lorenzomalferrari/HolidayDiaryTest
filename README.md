@@ -1,2 +1,0 @@
-# HolidayDiary
-Android App

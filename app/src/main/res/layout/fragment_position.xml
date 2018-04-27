@@ -6,10 +6,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/position"
+        android:text="Position"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
-    <!-- Inserimento del pezzo per visualizzare la mappa con la mia posizione -->
-    <!-- Uso di cosa? MapView? -->
 </RelativeLayout>

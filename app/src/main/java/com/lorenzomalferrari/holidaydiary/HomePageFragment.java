@@ -1,8 +1,8 @@
 package com.lorenzomalferrari.holidaydiary;
 
-
-import android.app.AlertDialog;
+import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,10 +13,6 @@ import android.widget.Button;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomePageFragment extends Fragment {
 
     DatabaseHelper databaseHelper;
@@ -24,8 +20,8 @@ public class HomePageFragment extends Fragment {
 
     public HomePageFragment() {
         // Required empty public constructor
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +34,8 @@ public class HomePageFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle(R.string.homepage);
+        getActivity().setTitle("Home Page");
+
     }
 
 
@@ -47,7 +44,7 @@ public class HomePageFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor cursor = databaseHelper.getAllData();
+                        Cursor cursor = databaseHelper.getAllUsers();
                         if (cursor.getCount() == 0){
                             //show message
                             //showMessage("Errore","Trovo niente");

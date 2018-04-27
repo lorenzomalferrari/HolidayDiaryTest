@@ -1,124 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <!-- Immagine del profilo -->
-    <ImageView
-        android:id="@+id/img_account"
-        android:layout_width="142dp"
-        android:layout_height="142dp"
-        android:padding="50dp"
-        android:src="@drawable/img_account"
-        android:tint="@color/secondaryDarkColor" />
-    <!-- FirstName -->
-    <TextView
-        android:id="@+id/textView_firstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_account"
-        android:padding="10dp"
-        android:textSize="20dp"
-        android:text="Lorenzo"/>
-    <!-- LastName -->
-    <TextView
-        android:id="@+id/textView_lastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_account"
-        android:layout_below="@+id/textView_firstName"
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:text="Malferrari"/>
-    <!-- Usarname -->
-    <TextView
-        android:id="@+id/textView_usarname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_account"
-        android:layout_below="@+id/textView_lastName"
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:text="@string/usarname_text"/>
-    <!-- Email Area -->
-        <!-- Email Text -->
-        <TextView
-            android:id="@+id/textView_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_account"
-            android:padding="10dp"
-            android:text="@string/email_text"/>
-        <!-- Email Value -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_account"
-            android:layout_toRightOf="@+id/textView_email"
-            android:padding="10dp"
-            android:text="malfe.lore@gmail.com"/>
-    <!-- City Area -->
-    <TextView
-        android:id="@+id/textView_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_email"
-        android:padding="10dp"
-        android:text="@string/city_text"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView_email"
-        android:padding="10dp"
-        android:layout_toRightOf="@+id/textView_email"
-        android:text="Bologna"/>
-    <!-- Country Area -->
-    <TextView
-        android:id="@+id/textView_country"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_city"
-        android:padding="10dp"
-        android:text="@string/country_text"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_city"
-        android:layout_toRightOf="@+id/textView_email"
-        android:padding="10dp"
-        android:text="Italia"/>
-    <!-- Gender Area -->
-    <TextView
-        android:id="@+id/textView_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_country"
-        android:padding="10dp"
-        android:text="@string/gender_text"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_country"
-        android:layout_toRightOf="@+id/textView_gender"
-        android:padding="10dp"
-        android:text="Maschio"/>
-    <!-- Age Area -->
-    <TextView
-        android:id="@+id/textView_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_gender"
-        android:padding="10dp"
-        android:text="@string/age_text"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_gender"
-        android:padding="10dp"
-        android:layout_toRightOf="@+id/textView_age"
-        android:text="21"/>
-    </RelativeLayout>
-</ScrollView>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Account"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

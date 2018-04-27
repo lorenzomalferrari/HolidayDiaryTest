@@ -1,6 +1,7 @@
 package com.lorenzomalferrari.holidaydiary;
 
-
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,7 +32,7 @@ public class AccountFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle(R.string.account);
+        getActivity().setTitle("Account" );
     }
 
 }
