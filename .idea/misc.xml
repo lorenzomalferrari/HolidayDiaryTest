@@ -27,16 +27,9 @@
   </component>
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my_position.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notes.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pictures.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_position.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_privacy_terms.xml" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_travels.xml" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_version.xml" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
