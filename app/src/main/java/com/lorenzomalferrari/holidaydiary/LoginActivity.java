@@ -25,17 +25,17 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
 
     // UI references.
-    private EditText email, password;
-    private Button btnLogin;
+    Button btnLogin;
+    EditText email,password;
     DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        databaseHelper  = new DatabaseHelper(this);
-
+        //
         databaseHelper = new DatabaseHelper(this);
+        //
         btnLogin = findViewById(R.id.btnLogin);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -50,9 +50,11 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Cursor res = databaseHelper.getData(email.getText().toString(),password.getText().toString());
                         if(res.getCount() == 0) {
+                            //Vado alla pagina di registrazione
                             callRegister();
                         }
                         else {
+                            //Entro nell'app
                             callMenu();
                         }
                     }

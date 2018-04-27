@@ -78,8 +78,10 @@ public class MenuActivity extends AppCompatActivity
     }
 
     private void displaySelectedScreen(int itemId) {
+
         //creating fragment object
         Fragment fragment = null;
+
         //initializing the fragment object which is selected
         switch (itemId) {
             case R.id.nav_homepage:
@@ -95,7 +97,6 @@ public class MenuActivity extends AppCompatActivity
                 fragment = new PicturesFragment();
                 break;
             case R.id.nav_position:
-
                 fragment = new PositionFragment();
                 break;
             case R.id.nav_account:

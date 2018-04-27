@@ -11,32 +11,13 @@ import java.util.ArrayList;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
-     * Nome del file dove sarà contenuto tutto il database
+     *
      */
     public static final String DATABASE_NAME = "holidayDiary.db";
-
     /**
-     * Nome della tabella contenente tutti gli utenti e con i loro rispettivi dati
+     *
      */
     public static final String TABLE_NAME = "User";
-
-    /**
-     * Lista delle colonne presenti nella tabella User
-     */
-    /*public static final String COL_1 = "id"; // Si compila da solo
-    public static final String COL_2 = "firstName";
-    public static final String COL_3 = "lastName";
-    public static final String COL_4 = "username";
-    public static final String COL_5 = "password";
-    public static final String COL_6 = "email";
-    public static final String COL_7 = "city";
-    public static final String COL_8 = "country";
-    public static final String COL_9 = "gender";
-    public static final String COL_10 = "age";
-    public static final String COL_11 = "birthdate";
-    public static final String COL_12 = "registration_date"; // Si compila da solo
-    public static final String COL_13 = "last_login";// Si compila da solo*/
-
     /**
      * Lista delle colonne presenti nella tabella User
      * (Tecnica alternativa)
@@ -45,24 +26,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "city","country","gender","age","birthdate","registration_date","last_login"};
 
     /**
-     * Costruttore di default
+     * Costructor
      * @param context
      */
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        //An object for create and/or open a database that will be used for reading and writing.
-        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
     /**
-     * Creazione della tabella
+     * Creo la tabella nel database
      * @param db
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //Creazione delle tabelle
-        //Utenti -- Note -- Viaggi -- Immagini -- Posizioni
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(id INTEGER PRIMARY KEY," +
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(" +
+                "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
                 "username VARCHAR(255)," +
@@ -78,23 +56,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Aggiornamento della tabella
+     *
      * @param db
      * @param oldVersion
      * @param newVersion
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
 
-    /**
-     * Inserimento dell'utente nel database
-     * @param arrayList
-     * @return
-     */
-    public boolean insertData(ArrayList arrayList){
+    public boolean insertData(ArrayList arrayList) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TABLE[1],arrayList.get(0).toString());
@@ -105,23 +78,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_TABLE[6],arrayList.get(5).toString());
         contentValues.put(COL_TABLE[7],arrayList.get(6).toString());
         contentValues.put(COL_TABLE[8],arrayList.get(7).toString());
+        //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
         contentValues.put(COL_TABLE[10],arrayList.get(8).toString());
-        long isInsert = db.insert(TABLE_NAME,null,contentValues);
-        if (isInsert == -1)
+        long result = db.insert(TABLE_NAME,null ,contentValues);
+        if(result == -1)
             return false;
         else
             return true;
     }
 
     /**
-     * Restituzione di tutti i dati inseriti nella tabella
+     * Ottengo tutti i dati degli utenti presenti all'interno del database
      * @return
      */
-    public Cursor getAllData(){
-       SQLiteDatabase db = this.getWritableDatabase();
-       Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
-       return cursor;
+    public Cursor getAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
+        return res;
     }
+
+    /**
+     * Ottengo tutti i dat dell'utente controllando i valori dei campi del login
+     * @param email
+     * @param password
+     * @return
+     */
     public Cursor getData(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
@@ -129,23 +110,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
-     * @param email
-     * @param password
+     * Metodo ancora da costruire
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param username
      * @return
      */
-    public Cursor getDataLogin(String email, String password){
+    public boolean updateData(String id,String firstName,String lastName,String username) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id FROM "+ TABLE_NAME + " WHERE email = "+ email +
-                " AND password = "+password,null);
-        return cursor;
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_TABLE[0],id);
+        contentValues.put(COL_TABLE[1],firstName);
+        contentValues.put(COL_TABLE[2],lastName);
+        contentValues.put(COL_TABLE[3],username);
+        db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        return true;
     }
 
     /**
-     *
+     * Cancello l'utente sapendo il suo id
+     * @param id
      * @return
      */
-    public boolean upDateData(){
-        return true;
+    public Integer deleteData (String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "ID = ?",new String[] {id});
+    }
+
+
+    /**
+     * Metodo per calcolare l'età dell'utente
+     * P.S. : Metodo da mettere da qualche altra parte
+     * @return
+     */
+    public int calcAge(){
+        int age = 0;
+
+        return age;
     }
 }
