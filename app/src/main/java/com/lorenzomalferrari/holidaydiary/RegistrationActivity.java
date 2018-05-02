@@ -17,13 +17,13 @@ import java.util.ArrayList;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    DatabaseHelper myDb;
+    /**
+     *
+     */
+    DatabaseHelper databaseHelper;
     Button btnAddData,btnviewAll,btnDelete;
-    //
     RadioButton gender;
-    //
     EditText id,firstName,lastName,username,password,conf_password,email,city,country,birthdate;
-    //
     Button btnviewUpdate;
 
     @Override
@@ -31,7 +31,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        myDb = new DatabaseHelper(this);
+        databaseHelper = new DatabaseHelper(this);
 
         // FirstName
         firstName = findViewById(R.id.register_firstNameValue);
@@ -103,7 +103,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Integer deletedRows = myDb.deleteData(id.getText().toString());
+                        Integer deletedRows = databaseHelper.deleteData(id.getText().toString());
                         if(deletedRows > 0)
                             Toast.makeText(RegistrationActivity.this,"Data Deleted",Toast.LENGTH_LONG).show();
                         else
@@ -118,7 +118,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdate = myDb.updateData(id.getText().toString(),
+                        boolean isUpdate = databaseHelper.updateData(id.getText().toString(),
                                 firstName.getText().toString(),
                                 lastName.getText().toString(),password.getText().toString());
                         if(isUpdate == true)
@@ -135,7 +135,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(createArrayList());
+                        boolean isInserted = databaseHelper.insertData(createArrayList());
                         if(isInserted == true) {
                             Toast.makeText(RegistrationActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                             callMenu();
@@ -152,7 +152,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = myDb.getAllUsers();
+                        Cursor res = databaseHelper.getAllUsers();
                         if(res.getCount() == 0) {
                             // show message
                             showMessage("Error","Nothing found");
