@@ -25,6 +25,7 @@ public class User {
         this.firstName = "Lorenzo";
         this.lastName = "Malferrari";
         this.username = "malfe.lore";
+        this.password = "123456";
     }
 
 
