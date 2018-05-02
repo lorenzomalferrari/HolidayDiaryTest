@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ *
  * A simple {@link Fragment} subclass.
  */
 public class AccountFragment extends Fragment {
