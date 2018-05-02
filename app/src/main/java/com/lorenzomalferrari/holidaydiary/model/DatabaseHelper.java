@@ -29,6 +29,12 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     public static final String POSITION_TABLE = "Position";
 
     /**
+     * Lista delle tabelle del database
+     */
+    public final String[] TABLE_NAMES = new String[]{"User","Travel","Note","Picture","Position"};
+
+
+    /**
      * Lista delle colonne presenti nella tabella User
      */
     String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
