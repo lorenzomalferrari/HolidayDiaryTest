@@ -13,6 +13,10 @@ import android.widget.Button;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
+/**
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ */
 public class HomePageFragment extends Fragment {
 
     DatabaseHelper databaseHelper;
