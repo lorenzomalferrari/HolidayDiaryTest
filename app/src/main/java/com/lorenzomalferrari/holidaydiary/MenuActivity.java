@@ -60,7 +60,6 @@ public class MenuActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -71,7 +70,6 @@ public class MenuActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
         //calling the method displayselectedscreen and passing the id of selected menu
         displaySelectedScreen(item.getItemId());
         //make this method blank
@@ -79,7 +77,6 @@ public class MenuActivity extends AppCompatActivity
     }
 
     private void displaySelectedScreen(int itemId) {
-
         //creating fragment object
         Fragment fragment = null;
         Intent intent = null;
