@@ -22,11 +22,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Nome della tabella degli Utenti
      */
-    public static final String USER_TABLE = "User";
-    public static final String TRAVEL_TABLE = "Travel";
-    public static final String NOTE_TABLE = "Note";
-    public static final String PICTURE_TABLE = "Picture";
-    public static final String POSITION_TABLE = "Position";
+    //public static final String USER_TABLE = "User";
+    //public static final String TRAVEL_TABLE = "Travel";
+    //public static final String NOTE_TABLE = "Note";
+    //public static final String PICTURE_TABLE = "Picture";
+    //public static final String POSITION_TABLE = "Position";
 
     /**
      * Lista delle tabelle del database
