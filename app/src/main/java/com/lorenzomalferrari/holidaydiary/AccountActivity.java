@@ -21,7 +21,7 @@ public class AccountActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
         //button
-        btnVisaulizzaDati = findViewById(R.id.btnViewUsersA);
+        btnVisaulizzaDati = findViewById(R.id.btnAccountUser);
         //
         viewTableData();
     }
