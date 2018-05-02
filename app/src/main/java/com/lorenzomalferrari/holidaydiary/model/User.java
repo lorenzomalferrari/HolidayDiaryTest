@@ -23,6 +23,7 @@ public class User {
     public User() {
         this.id = 0;
         this.firstName = "Lorenzo";
+        this.lastName = "Malferrari";
     }
 
 
