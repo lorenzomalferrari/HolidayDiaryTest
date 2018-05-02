@@ -31,7 +31,8 @@ public class User {
 
 
     /**
-     *
+     * Costrutore base
+     * Usato al momento del login
      * @param email
      * @param password
      */
