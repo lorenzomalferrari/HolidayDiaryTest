@@ -17,10 +17,12 @@ public class User {
     private Date birthdate, registration_date, last_login;
 
     /**
-     *
+     * Costruttore di default
+     * (Usato per i test)
      */
     public User() {
         this.id = 0;
+        this.firstName = "Lorenzo";
     }
 
 
