@@ -48,7 +48,7 @@
             android:padding="20dp"
             android:text="Lorenzo Malferrari"
             android:fontFamily="@font/cabin_bold_italic"/>
-        <!-- Testo (lorenzomalferrari.com) -->
+        <!-- Testo (author's website) -->
         <TextView
             android:id="@+id/version_websiteName"
             android:layout_width="wrap_content"
