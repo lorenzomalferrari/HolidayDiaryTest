@@ -1,10 +1,10 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    DatabaseHelper databaseHelper;
+    Button btnVisaulizzaDati;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,10 @@ public class MenuActivity extends AppCompatActivity
         //add this line to display menu1 when the activity is loaded
         /* Modificare in modo che legga lo stato della pagina così se ruoto tel non cambia la situazione */
         displaySelectedScreen(R.id.nav_homepage);
+
+        btnVisaulizzaDati = findViewById(R.id.btnViewUsers);
+        //
+        viewTableData();
     }
 
     @Override
@@ -125,5 +135,45 @@ public class MenuActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+
+
+    public void viewTableData(){
+        btnVisaulizzaDati.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor cursor = databaseHelper.getAllUsers();
+                        if (cursor.getCount() == 0){
+                            //show message
+                            showMessage("Errore","Trovo niente");
+                            return;
+                        }
+                        else {
+                            StringBuffer buffer = new StringBuffer();
+                            while (cursor.moveToNext()){
+                                buffer.append("Id : "+ cursor.getString(0)+"\n");
+                                buffer.append("Nome : "+ cursor.getString(1)+"\n");
+                                buffer.append("Cognome : "+ cursor.getString(2)+"\n");
+                                buffer.append("Username : "+ cursor.getString(3)+"\n");
+                                buffer.append("Password : "+ cursor.getString(4)+"\n");
+                                buffer.append("City : "+ cursor.getString(5)+"\n");
+                            }
+
+                            // show all data
+                            showMessage("Data",buffer.toString());
+                        }
+                    }
+                }
+        );
+    }
+
+    public void showMessage(String title, String Message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
     }
 }
