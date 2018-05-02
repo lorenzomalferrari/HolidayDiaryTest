@@ -26,6 +26,7 @@ public class User {
         this.lastName = "Malferrari";
         this.username = "malfe.lore";
         this.password = "123456";
+        this.email = "malfe.lore@gmail.com";
     }
 
 
