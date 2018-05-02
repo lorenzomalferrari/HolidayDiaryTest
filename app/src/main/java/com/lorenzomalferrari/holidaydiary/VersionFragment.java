@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 
 /**
  *
- * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ * @author Lorenzo Malferrari
+ * My Website: www.lorenzomalferrari.com
+ * My profile on GitHub: https://github.com/lorenzomalferrari
  * A simple {@link VersionFragment} subclass.
  */
 public class VersionFragment extends Fragment {
