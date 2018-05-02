@@ -56,14 +56,15 @@ public class RegistrationActivity extends AppCompatActivity {
 
         btnAddData = findViewById(R.id.btnSave);
         btnviewAll = findViewById(R.id.button_viewAll);
-        //btnviewUpdate= findViewById(R.id.button_update);
-        //btnDelete= findViewById(R.id.button_delete);
+        btnviewUpdate= findViewById(R.id.button_update);
+        btnDelete= findViewById(R.id.button_delete);
 
         //
+        id = findViewById(R.id.register_firstNameValue);
         AddData();
         viewAll();
-        //UpdateData();
-        //DeleteData();
+        UpdateData();
+        DeleteData();
     }
 
     /**
@@ -91,7 +92,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private RadioButton getRadioButtonChecked(){
         RadioButton radioMale =  findViewById(R.id.radioButtonMale);
         RadioButton radioFemale =  findViewById(R.id.radioButtonFemale);
-        if (radioMale.isSelected() == true){
+        if (radioMale.isChecked() == true){
             return radioMale;
         }
         else
@@ -103,6 +104,25 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Integer deletedRows = databaseHelper.deleteData(id.getText().toString());
+                        if(deletedRows > 0)
+                            Toast.makeText(RegistrationActivity.this,"Data Deleted",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(RegistrationActivity.this,"Data not Deleted",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+    }
+
+    /**
+     * Svuoto l'intera tabella
+     */
+    private void DeleteAllDatabase() {
+        btnDelete.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Ancora da modificare --> Scopo cancellare tutti i dati nella taabella
                         Integer deletedRows = databaseHelper.deleteData(id.getText().toString());
                         if(deletedRows > 0)
                             Toast.makeText(RegistrationActivity.this,"Data Deleted",Toast.LENGTH_LONG).show();
