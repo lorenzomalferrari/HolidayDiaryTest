@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put(COL_TABLE[8],arrayList.get(7).toString());//sesso
         //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
         contentValues.put(COL_TABLE[10],arrayList.get(8).toString());//data di nascita
-        long result = db.insert(USER_TABLE,null ,contentValues);
+        long result = db.insert(TABLE_NAMES[0],null ,contentValues);
         if(result == -1)
             return false;
         else
@@ -103,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE,null);
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0],null);
         return res;
     }
 
@@ -130,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void crateUserTable(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ USER_TABLE + "(" +
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
@@ -155,7 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getData(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
+        Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAMES[0] + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
     }
 
@@ -185,7 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(USER_TABLE, "ID = ?",new String[] {id});
+        return db.delete(TABLE_NAMES[0], "ID = ?",new String[] {id});
     }
 
 }
