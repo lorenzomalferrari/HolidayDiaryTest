@@ -7,7 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-
+/**
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ */
 public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
@@ -18,7 +21,11 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Nome della tabella degli Utenti
      */
-    public static final String TABLE_NAME = "User";
+    public static final String USER_TABLE = "User";
+    public static final String TRAVEL_TABLE = "Travel";
+    public static final String NOTE_TABLE = "Note";
+    public static final String PICTURE_TABLE = "Picture";
+    public static final String POSITION_TABLE = "Position";
 
     /**
      * Lista delle colonne presenti nella tabella User
@@ -52,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+USER_TABLE);
         onCreate(db);
     }
 
@@ -76,7 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put(COL_TABLE[8],arrayList.get(7).toString());//sesso
         //contentValues.put(COL_TABLE[9],calcAge());//con birthdate calcolare l'età
         contentValues.put(COL_TABLE[10],arrayList.get(8).toString());//data di nascita
-        long result = db.insert(TABLE_NAME,null ,contentValues);
+        long result = db.insert(USER_TABLE,null ,contentValues);
         if(result == -1)
             return false;
         else
@@ -89,13 +96,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
+        Cursor res = db.rawQuery("select * from "+USER_TABLE,null);
         return res;
     }
 
 
     private void createStructureDatabase(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(" +
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ USER_TABLE + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
@@ -131,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getData(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
+        Cursor res = db.rawQuery("select * from "+USER_TABLE + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
     }
 
@@ -150,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put(COL_TABLE[1],firstName);
         contentValues.put(COL_TABLE[2],lastName);
         contentValues.put(COL_TABLE[3],username);
-        db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        db.update(USER_TABLE, contentValues, "ID = ?",new String[] { id });
         return true;
     }
 
@@ -161,7 +168,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "ID = ?",new String[] {id});
+        return db.delete(USER_TABLE, "ID = ?",new String[] {id});
     }
 
 }
