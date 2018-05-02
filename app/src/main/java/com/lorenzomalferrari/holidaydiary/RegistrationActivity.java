@@ -55,13 +55,13 @@ public class RegistrationActivity extends AppCompatActivity {
         birthdate =  findViewById(R.id.register_birthdateValue);
 
         btnAddData = findViewById(R.id.btnSave);
-        //btnviewAll = findViewById(R.id.button_viewAll);
+        btnviewAll = findViewById(R.id.button_viewAll);
         //btnviewUpdate= findViewById(R.id.button_update);
         //btnDelete= findViewById(R.id.button_delete);
 
         //
         AddData();
-        //viewAll();
+        viewAll();
         //UpdateData();
         //DeleteData();
     }

@@ -214,7 +214,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="Add Data" />
+            android:text="Add Data" />-->
 
         <Button
             android:id="@+id/button_viewAll"
@@ -224,6 +224,7 @@
             android:layout_below="@+id/register_countryValue"
             android:text="View All" />
 
+   <!--
         <Button
             android:id="@+id/button_update"
             android:layout_width="wrap_content"
@@ -232,14 +233,15 @@
             android:layout_below="@+id/register_passwordTextValidate"
             android:text="Update" />
 
-
         <Button
             android:id="@+id/button_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:text="Delete" />-->
+            android:text="Delete" />
+
+    -->
 
     </RelativeLayout>
 </ScrollView>
