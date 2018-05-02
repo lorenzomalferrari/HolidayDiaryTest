@@ -40,20 +40,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(" +
-                "id INTEGER PRIMARY KEY," +
-                "firstName VARCHAR(255)," +
-                "lastName VARCHAR(255)," +
-                "username VARCHAR(255)," +
-                "password VARCHAR(255)," +
-                "email VARCHAR(255)," +
-                "city VARCHAR(255)," +
-                "country VARCHAR(255)," +
-                "gender CHAR(1)," +
-                "age VARCHAR(255)," +
-                "birthdate DATE," +
-                "registration_date DATETIME," +
-                "last_login DATETIME)");
+        //Creazione del Database
+        createStructureDatabase(db);
     }
 
     /**
@@ -70,6 +58,8 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     /**
      * Inserisco i dati nel database
+     *
+     * (Ulteriormente da migliorare)
      * @param arrayList
      * @return
      */
@@ -101,6 +91,36 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
+    }
+
+
+    private void createStructureDatabase(SQLiteDatabase db){
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAME + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "lastName VARCHAR(255)," +
+                "username VARCHAR(255)," +
+                "password VARCHAR(255)," +
+                "email VARCHAR(255)," +
+                "city VARCHAR(255)," +
+                "country VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
+                "birthdate DATE," +
+                "registration_date DATETIME," +
+                "last_login DATETIME)");
+
+
+        //Creazione della tabella User
+        //crateUserTable();
+        //Creazione della tabella Picture
+        //createPictureTable();
+        //Creazione della tabella Position
+        //createPositionTable();
+        //Creazione della tabella Note
+        //createNoteTable();
+        //Creazione della tabella Travel
+        //createTravelTable();
     }
 
     /**
@@ -144,15 +164,4 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         return db.delete(TABLE_NAME, "ID = ?",new String[] {id});
     }
 
-
-    /**
-     * Calcolo l'età dell'utente usando data odierna e data di nascita inserita
-     * (Metodo ancora da costruire e da mettere in altra classe)
-     * @return
-     */
-    public int calcAge(){
-        int age = 0;
-
-        return age;
-    }
 }
