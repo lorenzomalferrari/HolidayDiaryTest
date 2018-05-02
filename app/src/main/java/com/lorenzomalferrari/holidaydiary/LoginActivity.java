@@ -10,6 +10,10 @@ import android.widget.EditText;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
+/**
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ */
 public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin;
