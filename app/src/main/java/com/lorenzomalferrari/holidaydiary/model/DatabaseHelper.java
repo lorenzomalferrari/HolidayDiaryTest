@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+
 /**
  *
  * @author Lorenzo Malferrari - www.lorenzomalferrari.com
@@ -96,12 +97,33 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+USER_TABLE,null);
+        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE,null);
         return res;
     }
 
 
+    /**
+     * Costruzione del database holidayDiary
+     * @param db
+     */
     private void createStructureDatabase(SQLiteDatabase db){
+        //Creazione della tabella User
+        crateUserTable(db);
+        //Creazione della tabella Picture
+        //createPictureTable();
+        //Creazione della tabella Position
+        //createPositionTable();
+        //Creazione della tabella Note
+        //createNoteTable();
+        //Creazione della tabella Travel
+        //createTravelTable();
+    }
+
+    /**
+     * Costruzione della tabella utente
+     * @param db
+     */
+    private void crateUserTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ USER_TABLE + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
@@ -117,17 +139,6 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "registration_date DATETIME," +
                 "last_login DATETIME)");
 
-
-        //Creazione della tabella User
-        //crateUserTable();
-        //Creazione della tabella Picture
-        //createPictureTable();
-        //Creazione della tabella Position
-        //createPositionTable();
-        //Creazione della tabella Note
-        //createNoteTable();
-        //Creazione della tabella Travel
-        //createTravelTable();
     }
 
     /**
@@ -138,7 +149,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     public Cursor getData(String email,String password) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+USER_TABLE + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
+        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE + " WHERE email = '"+email+"' AND password = '"+password+"'",null);
         return res;
     }
 
