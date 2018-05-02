@@ -24,6 +24,7 @@ public class User {
         this.id = 0;
         this.firstName = "Lorenzo";
         this.lastName = "Malferrari";
+        this.username = "malfe.lore";
     }
 
 
