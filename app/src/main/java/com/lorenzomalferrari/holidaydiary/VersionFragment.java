@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * A simple {@link Fragment} subclass.
+ *
+ * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ * A simple {@link VersionFragment} subclass.
  */
 public class VersionFragment extends Fragment {
 
