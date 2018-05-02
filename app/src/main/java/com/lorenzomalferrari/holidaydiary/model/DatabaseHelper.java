@@ -31,13 +31,13 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Lista delle tabelle del database
      */
-    public final String[] TABLE_NAMES = new String[]{"User","Travel","Note","Picture","Position"};
+    private final String[] TABLE_NAMES = new String[] {"User","Travel","Note","Picture","Position"};
 
 
     /**
      * Lista delle colonne presenti nella tabella User
      */
-    String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
+    private String[] COL_TABLE = new String[]{"id","firstName","lastName","username","password","email",
             "city","country","gender","age","birthdate","registration_date","last_login"};
 
     /**
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+USER_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAMES[0]);
         onCreate(db);
     }
 
@@ -174,7 +174,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
         contentValues.put(COL_TABLE[1],firstName);
         contentValues.put(COL_TABLE[2],lastName);
         contentValues.put(COL_TABLE[3],username);
-        db.update(USER_TABLE, contentValues, "ID = ?",new String[] { id });
+        db.update(TABLE_NAMES[0], contentValues, "ID = ?",new String[] { id });
         return true;
     }
 
