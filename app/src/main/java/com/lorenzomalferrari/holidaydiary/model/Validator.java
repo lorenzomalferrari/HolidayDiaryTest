@@ -1,10 +1,13 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
 /**
- *
+ * Classe per la validazione dell'email, della password e dell'età
  * @author Lorenzo Malferrari - www.lorenzomalferrari.com
  */
 public class Validator {
+
+
+
 
 
 
