@@ -35,7 +35,7 @@ public class User {
     }
 
     /**
-     *
+     * Costruttore completo
      * @param id
      * @param firstName
      * @param lastName
