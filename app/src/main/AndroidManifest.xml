@@ -10,21 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Login Activity Step 1 -->
+        <!-- Login Activity -->
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Registration Activity Step 2 -->
+        <!-- Registration Activity -->
         <activity android:name=".RegistrationActivity" />
-    
+        <!-- Menu Activity - Navigation Drawer Activity -->
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <!-- -->
         <activity android:name=".AccountActivity"></activity>
     </application>
 
