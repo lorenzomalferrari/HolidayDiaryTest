@@ -26,6 +26,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- Account Activity -->
         <activity android:name=".AccountActivity"></activity>
+        
     </application>
 
 </manifest>
