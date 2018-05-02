@@ -24,7 +24,7 @@
             android:name=".MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- -->
+        <!-- Account Activity -->
         <activity android:name=".AccountActivity"></activity>
     </application>
 
