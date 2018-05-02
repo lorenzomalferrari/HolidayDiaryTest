@@ -91,7 +91,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private RadioButton getRadioButtonChecked(){
         RadioButton radioMale =  findViewById(R.id.radioButtonMale);
         RadioButton radioFemale =  findViewById(R.id.radioButtonFemale);
-        if (radioMale.isChecked() == true){
+        if (radioMale.isSelected() == true){
             return radioMale;
         }
         else
