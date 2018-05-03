@@ -70,7 +70,7 @@ public class AccountActivity extends AppCompatActivity {
      * @param Message
      */
     public void showMessage(String title,String Message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);//funziona solo con Activity
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);//funziona solo nelle Activity
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(Message);
