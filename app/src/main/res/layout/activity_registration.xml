@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/register_countryText"
             android:padding="15dp"
-            android:text="Sesso"/>
+            android:text="@string/gender_text"/>
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
