@@ -95,7 +95,7 @@ public class MenuActivity extends AppCompatActivity
             case R.id.nav_pictures:
                 fragment = new PicturesFragment();
                 break;
-            case R.id.nav_position:
+            case R.id.nav_places:
                 intent = new Intent(this, MyPositionActivity.class);
                 this.startActivity(intent);
                 break;
