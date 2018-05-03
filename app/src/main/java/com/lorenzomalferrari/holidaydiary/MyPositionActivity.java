@@ -34,14 +34,14 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
-    private Location lastLocation;
+    private Location myLastLocation;
     private Marker currentLocationMarker;
 
     public static final int REQUEST_LOCATION_CODE = 99;
 
     private static final int MY_PERMISSION_REQUEST_CODE = 11;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 10;
-    private Location myLastLocation;
+
 
     //My position
     double latitude, longitude;
@@ -117,16 +117,16 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
-
         googleApiClient.connect();
     }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         locationRequest = new LocationRequest();
-        locationRequest.setInterval(1000);
-        locationRequest.setFastestInterval(1000);
+        locationRequest.setInterval(UPDATE_INTERVAL);
+        locationRequest.setFastestInterval(FASTEST_INTERVAL);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setSmallestDisplacement(DISPLACEMENT);
         if (ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient,locationRequest,this);
         }
@@ -166,7 +166,7 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onLocationChanged(Location location) {
-        lastLocation = location;
+        myLastLocation = location;
 
         if (currentLocationMarker != null){
             currentLocationMarker.remove();
@@ -176,8 +176,8 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Current Location");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.title("YUO");
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
 
         currentLocationMarker = mMap.addMarker(markerOptions);
 
