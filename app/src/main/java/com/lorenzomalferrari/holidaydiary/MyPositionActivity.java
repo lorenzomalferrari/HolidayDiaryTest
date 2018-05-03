@@ -62,8 +62,13 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         switch (requestCode){
             case MY_PERMISSION_REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    //if ()
+                    if (checkPlayServices()){
+                        buildGoogleApiClient();
+                        createLocationRequest();
+                        displayLocation();
+                    }
                 }
+                break;
         }
     }
 
