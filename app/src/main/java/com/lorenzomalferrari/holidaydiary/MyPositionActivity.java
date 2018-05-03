@@ -1,18 +1,47 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+    private static final int MY_PERMISSION_REQUEST_CODE = 11;
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 10;
+    private Location myLastLocation;
+
+    //My position
+    double latitude, longitude;
+
+    private GoogleApiClient myGoogleApiClient;
+    private LocationRequest myLocationRequest;
+
+    private static int UPDATE_INTERVAL = 5000;
+    private static int FASTEST_INTERVAL = 3000;
+    private static int DISPLACEMENT = 10;
+
+    Marker myCurrent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +51,54 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        //set location
+        setUpLocation();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode){
+            case MY_PERMISSION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    //if ()
+                }
+        }
+    }
+
+    private void setUpLocation() {
+        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            requestRuntimePermission();
+        }
+        else {
+            if (checkPlayServices()){
+                buildGoogleApiClient();
+                createLocationRequest();
+                displayLocation();
+            }
+        }
+    }
+
+    private void displayLocation() {
+
+    }
+
+    private void createLocationRequest() {
+
+    }
+
+    private void buildGoogleApiClient() {
+
+    }
+
+    private boolean checkPlayServices() {
+        return true;
+    }
+
+
+    private void requestRuntimePermission() {
     }
 
 
@@ -39,8 +116,8 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in here"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
