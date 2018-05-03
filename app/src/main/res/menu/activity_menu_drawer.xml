@@ -20,9 +20,13 @@
             android:icon="@drawable/img_pictures"
             android:title="@string/pictures" />
         <item
-            android:id="@+id/nav_position"
+            android:id="@+id/nav_places"
             android:icon="@drawable/img_position"
-            android:title="@string/position" />
+            android:title="Places" />
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/img_position"
+            android:title="Reservation" />
     </group>
     <item android:title="@string/other">
         <menu>
