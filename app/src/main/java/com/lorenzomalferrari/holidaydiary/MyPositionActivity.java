@@ -3,7 +3,6 @@ package com.lorenzomalferrari.holidaydiary;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,7 +23,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MyPositionActivity extends FragmentActivity implements OnMapReadyCallback,
+                GoogleApiClient.ConnectionCallbacks,
+                GoogleApiClient.OnConnectionFailedListener,
+                LocationListener{
 
     private GoogleMap mMap;
 
@@ -82,28 +85,89 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
                 buildGoogleApiClient();
                 createLocationRequest();
                 displayLocation();
+                Toast.makeText(this,"Longitudine: "+longitude+"  Latitudine: "+latitude, Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void displayLocation() {
+        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            return;
+        }
+        myLastLocation = LocationServices.FusedLocationApi.getLastLocation(myGoogleApiClient);
+        if (myLastLocation != null)
+        {
+            latitude = myLastLocation.getLatitude();
+            longitude = myLastLocation.getLongitude();
 
+
+            //add Marker
+            if (myCurrent != null)
+            {
+                myCurrent.remove(); // remove old marker
+            }
+            myCurrent = mMap.addMarker(new MarkerOptions()
+                                .position(new LatLng(latitude,longitude))
+                                .title("YUO"));
+
+            //move camera to this position
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude),12.0f));
+        }
     }
 
     private void createLocationRequest() {
-
+        myLocationRequest = new LocationRequest();
+        myLocationRequest.setInterval(UPDATE_INTERVAL);
+        myLocationRequest.setFastestInterval(FASTEST_INTERVAL);
+        myLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        myLocationRequest.setSmallestDisplacement(DISPLACEMENT);
     }
 
-    private void buildGoogleApiClient() {
-
+    protected synchronized void buildGoogleApiClient() {
+        myGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API).build();
+        myGoogleApiClient.connect();
     }
 
     private boolean checkPlayServices() {
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.SUCCESS)
+        {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode))
+            {
+                GooglePlayServicesUtil.getErrorDialog(resultCode,this,PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            }
+            else
+                {
+                Toast.makeText(this,"This device can't support", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            return false;
+        }
         return true;
     }
 
 
     private void requestRuntimePermission() {
+        android.support.v4.app.ActivityCompat.requestPermissions(this,new String[]
+                {
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                },MY_PERMISSION_REQUEST_CODE);
+    }
+
+    private void startLocationUpdates()
+    {
+        if (android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && android.support.v4.app.ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            return;
+        }
+        LocationServices.FusedLocationApi.requestLocationUpdates(myGoogleApiClient,myLocationRequest,this);
     }
 
 
@@ -121,8 +185,30 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in here"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //LatLng sydney = new LatLng(latitude, longitude);
+        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in here"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        displayLocation();
+        startLocationUpdates();
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        myGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        myLastLocation = location;
+        displayLocation();
     }
 }
