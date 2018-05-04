@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- -->
     <color name="primaryColor">#ef6300</color>
     <color name="primaryLightColor">#ff943d</color>
     <color name="primaryDarkColor">#b53200</color>
@@ -8,4 +9,12 @@
     <color name="secondaryDarkColor">#ac1900</color>
     <color name="primaryTextColor">#fffcfa</color>
     <color name="secondaryTextColor">#000000</color>
+    <!-- -->
+    <color name="colorPrimaryVersion">#3f51b5</color>
+    <color name="colorPrimaryDarkVersion">#2f333f</color>
+    <color name="bluelight">#49acd5</color>
+    <color name="green">#45bc62</color>
+    <color name="white">#ffffff</color>
+    <color name="orange">#eaad43</color>
+
 </resources>
