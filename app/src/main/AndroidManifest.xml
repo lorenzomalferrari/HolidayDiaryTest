@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
 
         <!-- Login Activity -->
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SlashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +48,8 @@
 
         <activity
             android:name=".MyPositionActivity"
-            android:label="@string/title_activity_my_position"></activity>
+            android:label="@string/title_activity_my_position" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>
