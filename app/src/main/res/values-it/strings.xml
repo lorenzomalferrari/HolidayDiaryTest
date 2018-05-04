@@ -11,14 +11,12 @@
     <string name="privacytermsofuse">Privacy e Termini di uso</string>
     <string name="version">Versione</string>
     <string name="other">Altro</string>
-
     <string name="email_text">Email</string>
     <string name="city_text">Città</string>
     <string name="country_text">Stato</string>
     <string name="gender_text">Sesso</string>
     <string name="age_text">Età</string>
     <string name="usarname_text">usarname</string>
-
     <string name="privacy_title">Privacy</string>
     <string name="terms_title">Termini di uso</string>
     <string name="copyright">Tutti i diritti riservati</string>
