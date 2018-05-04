@@ -16,14 +16,14 @@ public class Validator {
      *
      * @return
      */
-    public boolean isValidLogin(String email,String password){
+    /*public boolean isValidLogin(String email,String password){
         if (isEmailValid(email) == true && isPasswordValid(password) == true){
             return true;
         }
         else {
             return true;
         }
-    }
+    }*/
 
     /**
      * Controllo che la password rispetti Patterns.EMAIL_ADDRESS
@@ -67,5 +67,26 @@ public class Validator {
         else {
             return false;
         }
+    }
+
+    /**
+     * Controllo che nella stringa non ci siano numeri
+     * @param stringa
+     * @return
+     */
+    public boolean containsNumer(String stringa){
+        boolean flag = false;
+        String[] stringSplit = stringa.split("");
+        for (int i = 0; i <= stringSplit.length;i ++){
+            try {
+                int isString = Integer.parseInt(stringSplit[i]);
+                flag = true;
+            }
+            catch (NumberFormatException e){
+                flag =  false;
+                break;
+            }
+        }
+        return flag;
     }
 }
