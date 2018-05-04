@@ -7,15 +7,7 @@
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/secondaryLightColor</item>
     </style>
-
-    <!-- Version application theme-->
-    <style name="AppThemeVersion" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimaryVersion</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkVersion</item>
-        <item name="colorAccent">@color/primaryColor</item>
-    </style>
-
+    
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -25,6 +17,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
+    <!-- Version application theme-->
+    <style name="AppThemeVersion" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryVersion</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkVersion</item>
+        <item name="colorAccent">@color/primaryColor</item>
+    </style>
 
 </resources>
