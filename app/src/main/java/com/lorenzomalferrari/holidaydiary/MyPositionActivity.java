@@ -85,7 +85,6 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
                 buildGoogleApiClient();
                 createLocationRequest();
                 displayLocation();
-                //Toast.makeText(this,"Longitudine: "+longitude+"  Latitudine: "+latitude, Toast.LENGTH_SHORT).show();
             }
         }
     }
