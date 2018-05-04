@@ -118,7 +118,6 @@ public class MenuActivity extends AppCompatActivity
                 fragment = new PrivacyTermsFragment();
                 break;
             case R.id.nav_version:
-                //fragment = new VersionFragment();
                 myDialog = new Dialog(this);
                 ShowPopup();
                 break;
