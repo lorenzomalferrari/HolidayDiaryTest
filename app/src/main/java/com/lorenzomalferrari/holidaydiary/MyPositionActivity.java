@@ -33,13 +33,13 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
     private static final int MY_PERMISSION_REQUEST_CODE = 11;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 10;
     private Location myLastLocation;
-
     //My position
     double latitude, longitude;
-
+    //
     private GoogleApiClient myGoogleApiClient;
+    //
     private LocationRequest myLocationRequest;
-
+    //
     private static int UPDATE_INTERVAL = 5000;
     private static int FASTEST_INTERVAL = 3000;
     private static int DISPLACEMENT = 10;

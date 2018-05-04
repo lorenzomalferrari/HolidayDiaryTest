@@ -1,6 +1,9 @@
 package com.lorenzomalferrari.holidaydiary;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,9 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Dialog myDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +118,9 @@ public class MenuActivity extends AppCompatActivity
                 fragment = new PrivacyTermsFragment();
                 break;
             case R.id.nav_version:
-                fragment = new VersionFragment();
+                //fragment = new VersionFragment();
+                myDialog = new Dialog(this);
+                ShowPopup();
                 break;
         }
 
@@ -124,5 +133,20 @@ public class MenuActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+
+    public void ShowPopup(){
+        TextView txtClose;
+        myDialog.setContentView(R.layout.versionpopup);
+        txtClose = myDialog.findViewById(R.id.txtClose);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
     }
 }
