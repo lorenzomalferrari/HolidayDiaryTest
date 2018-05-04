@@ -1,26 +1,71 @@
 package com.lorenzomalferrari.holidaydiary.model;
 
+import android.util.Patterns;
+import android.widget.EditText;
+
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
- * Classe per la validazione dell'email, della password e dell'età
- * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ *
  */
 public class Validator {
 
-
-
-
-
-
-
-
     /**
-     * Calcolo l'età dell'utente usando data odierna e data di nascita inserita
-     * (Metodo ancora da costruire e da mettere in altra classe)
+     *
      * @return
      */
-    public int calcAge(){
-        int age = 0;
+    public boolean isValidLogin(String email,String password){
+        if (isEmailValid(email) == true && isPasswordValid(password) == true){
+            return true;
+        }
+        else {
+            return true;
+        }
+    }
 
-        return age;
+    /**
+     * Controllo che la password rispetti Patterns.EMAIL_ADDRESS
+     * @return true = password ok || false = pawword !ok
+     */
+    public boolean isEmailValid(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    /**
+     * La password deve essere >= 6
+     * @return
+     */
+    public boolean isPasswordValid(String password) {
+        return password.length() >= 6;
+    }
+
+    /**
+     * Metodo che mi controlla che l'età non sia negativa
+     * @param age
+     * @return true se età > 0 else se età <= 0
+     */
+    private boolean isAgeNegative(int age){
+        if (age <= 0){
+            return false;
+        }
+        else return true;
+    }
+
+    /**
+     * Controllo che il valore non sia null ma che contenga qualcosa
+     * @param string
+     * @return false = null || true = string
+     */
+    public boolean isEmpty(String string) {
+        if (string.isEmpty()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
