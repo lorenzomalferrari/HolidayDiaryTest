@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/secondaryLightColor</item>
     </style>
-    
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -23,6 +23,14 @@
         <item name="colorPrimary">@color/colorPrimaryVersion</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkVersion</item>
         <item name="colorAccent">@color/primaryColor</item>
+    </style>
+
+    <!-- Version application theme-->
+    <style name="AppThemeLogin" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryLightColor</item>
     </style>
 
 </resources>

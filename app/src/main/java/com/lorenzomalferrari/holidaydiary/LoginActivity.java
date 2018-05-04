@@ -5,8 +5,11 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
@@ -19,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText email,password;
     DatabaseHelper databaseHelper;
+
+
+    //Variabili di test
+    LinearLayout layoutTop, layoutDown;
+    Animation uptodown, downtoup;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +39,20 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
+        //
+        layoutTop = findViewById(R.id.layoutTop);
+        layoutDown = findViewById(R.id.layoutDown);
+        uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
+        layoutTop.setAnimation(uptodown);
+        downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
+        layoutDown.setAnimation(downtoup);
+
         checkLogin();
     }
 
+    /**
+     *
+     */
     public void checkLogin() {
         btnLogin.setOnClickListener(
                 new View.OnClickListener() {
@@ -49,13 +70,17 @@ public class LoginActivity extends AppCompatActivity {
         );
     }
 
-    //Chiama la MenuActivity (Navigation Drawer Activity)
+    /**
+     * Chiama la MenuActivity (Navigation Drawer Activity)
+     */
     private void callMenu(){
         Intent intent = new Intent(this, MenuActivity.class);
         this.startActivity(intent);
     }
 
-    //Chiama la RegisterActivity
+    /**
+     * Chiama la RegisterActivity
+     */
     private void callRegister(){
         Intent intent = new Intent(this, RegistrationActivity.class);
         this.startActivity(intent);
