@@ -42,8 +42,10 @@ public class LoginActivity extends AppCompatActivity {
         //
         layoutTop = findViewById(R.id.layoutTop);
         layoutDown = findViewById(R.id.layoutDown);
+        //Animazione da top a down
         uptodown = AnimationUtils.loadAnimation(this,R.anim.uptodown);
         layoutTop.setAnimation(uptodown);
+        //Animazione da down a top
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
         layoutDown.setAnimation(downtoup);
 
