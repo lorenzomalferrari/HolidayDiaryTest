@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <!-- Immagine dell'app -->
         <ImageView
             android:layout_width="wrap_content"
@@ -29,6 +30,7 @@
             android:src="@mipmap/ic_launcher_round"
             android:layout_gravity="center"
             android:layout_marginTop="15dp" />
+
         <!-- Nome dell'app -->
         <TextView
             android:layout_width="wrap_content"
@@ -38,6 +40,7 @@
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
+
         <!-- Versione dell'app -->
         <TextView
             android:layout_width="wrap_content"
@@ -47,6 +50,7 @@
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
+
         <!-- Copyright dell'app -->
         <TextView
             android:layout_width="wrap_content"
@@ -56,6 +60,7 @@
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
+
         <!-- Autore dell'app -->
         <TextView
             android:layout_width="wrap_content"
@@ -65,6 +70,7 @@
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"/>
+
         <!-- Sito Web dell'app -->
         <TextView
             android:layout_width="wrap_content"
