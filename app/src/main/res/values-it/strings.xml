@@ -5,7 +5,7 @@
     <string name="travles">Viaggi</string>
     <string name="notes">Note</string>
     <string name="pictures">Immagini</string>
-    <string name="position">Posizione</string>
+    <string name="position">Luoghi</string>
     <string name="account">Account</string>
     <string name="settings">Impostazioni</string>
     <string name="privacytermsofuse">Privacy e Termini di uso</string>
@@ -20,6 +20,6 @@
     <string name="privacy_title">Privacy</string>
     <string name="terms_title">Termini di uso</string>
     <string name="copyright">Tutti i diritti riservati</string>
-    <string name="numberVersion">Versione 1.0.5</string>
+    <string name="numberVersion">Versione 1.5.0</string>
 
 </resources>
