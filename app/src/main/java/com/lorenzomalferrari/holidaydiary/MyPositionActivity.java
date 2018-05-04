@@ -184,9 +184,11 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        //LatLng sydney = new LatLng(latitude, longitude);
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in here"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        /*
+        LatLng sydney = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in here"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        */
     }
 
     @Override
