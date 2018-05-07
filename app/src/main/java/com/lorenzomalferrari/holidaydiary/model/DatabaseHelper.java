@@ -22,16 +22,16 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Nome della tabella degli Utenti
      */
-    //public static final String USER_TABLE = "User";
-    //public static final String TRAVEL_TABLE = "Travel";
-    //public static final String NOTE_TABLE = "Note";
-    //public static final String PICTURE_TABLE = "Picture";
-    //public static final String POSITION_TABLE = "Position";
+    //public static final String USER_TABLE = "Users";
+    //public static final String TRAVEL_TABLE = "Travels";
+    //public static final String NOTE_TABLE = "Notes";
+    //public static final String PICTURE_TABLE = "Pictures";
+    //public static final String POSITION_TABLE = "Places";
 
     /**
      * Lista delle tabelle del database
      */
-    private final String[] TABLE_NAMES = new String[] {"User","Travel","Note","Picture","Position"};
+    private final String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
 
 
     /**
@@ -130,6 +130,24 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      * @param db
      */
     private void crateUserTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "lastName VARCHAR(255)," +
+                "username VARCHAR(255)," +
+                "password VARCHAR(255)," +
+                "email VARCHAR(255)," +
+                "city VARCHAR(255)," +
+                "country VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
+                "birthdate DATE," +
+                "registration_date DATETIME," +
+                "last_login DATETIME)");
+
+    }
+
+    private void createPictureTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
