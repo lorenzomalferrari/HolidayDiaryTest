@@ -31,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     /**
      * Lista delle tabelle del database
      */
-    private final String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
+    private String[] TABLE_NAMES = new String[] {"Users","Travels","Notes","Pictures","Places"};
 
 
     /**
@@ -114,22 +114,22 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createStructureDatabase(SQLiteDatabase db){
         //Creazione della tabella User
-        crateUserTable(db);
+        crateUsersTable(db);
         //Creazione della tabella Picture
-        //createPictureTable();
+        //createPicturesTable(db);
         //Creazione della tabella Position
-        //createPositionTable();
+        //createPlacesTable(db);
         //Creazione della tabella Note
-        //createNoteTable();
+        //createNotesTable(db);
         //Creazione della tabella Travel
-        //createTravelTable();
+        //createTravelsTable(db);
     }
 
     /**
-     * Costruzione della tabella utente
+     * Costruzione della tabella Users
      * @param db
      */
-    private void crateUserTable(SQLiteDatabase db) {
+    private void crateUsersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
@@ -147,8 +147,80 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
 
     }
 
-    private void createPictureTable(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
+    /**
+     * Costruzione della tabella Travels
+     * @param db
+     */
+    private void createTravelsTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[1] + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "lastName VARCHAR(255)," +
+                "username VARCHAR(255)," +
+                "password VARCHAR(255)," +
+                "email VARCHAR(255)," +
+                "city VARCHAR(255)," +
+                "country VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
+                "birthdate DATE," +
+                "registration_date DATETIME," +
+                "last_login DATETIME)");
+
+    }
+
+
+    /**
+     * Costruzione della tabella Travels
+     * @param db
+     */
+    private void createNotesTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[2] + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "lastName VARCHAR(255)," +
+                "username VARCHAR(255)," +
+                "password VARCHAR(255)," +
+                "email VARCHAR(255)," +
+                "city VARCHAR(255)," +
+                "country VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
+                "birthdate DATE," +
+                "registration_date DATETIME," +
+                "last_login DATETIME)");
+
+    }
+
+
+    /**
+     * Costruzione della tabella Pictures
+     * @param db
+     */
+    private void createPicturesTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[3] + "(" +
+                "id INTEGER PRIMARY KEY," +
+                "firstName VARCHAR(255)," +
+                "lastName VARCHAR(255)," +
+                "username VARCHAR(255)," +
+                "password VARCHAR(255)," +
+                "email VARCHAR(255)," +
+                "city VARCHAR(255)," +
+                "country VARCHAR(255)," +
+                "gender CHAR(1)," +
+                "age VARCHAR(255)," +
+                "birthdate DATE," +
+                "registration_date DATETIME," +
+                "last_login DATETIME)");
+
+    }
+
+    /**
+     * Costruzione della tabella Pictures
+     * @param db
+     */
+    private void createPlacesTable(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[4] + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
                 "lastName VARCHAR(255)," +
