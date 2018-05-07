@@ -250,21 +250,22 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Non ancora implementato del tutto
+     * Metodo non del tutto implementato
+     * @param database Nome del database dove verranno aggiunti i dati
      * @param id
-     * @param firstName
-     * @param lastName
-     * @param username
+     * @param firstName nuovo Nome
+     * @param lastName nuovo Cognome
+     * @param username nuovo username
      * @return
      */
-    public boolean updateData(String id,String firstName,String lastName,String username) {
+    public boolean updateData(String database,String id,String firstName,String lastName,String username) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TABLE[0],id);
         contentValues.put(COL_TABLE[1],firstName);
         contentValues.put(COL_TABLE[2],lastName);
         contentValues.put(COL_TABLE[3],username);
-        db.update(TABLE_NAMES[0], contentValues, "ID = ?",new String[] { id });
+        db.update(database, contentValues, "ID = ?",new String[] { id });
         return true;
     }
 
