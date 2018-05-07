@@ -30,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
+        // Oggetto della classe DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
         // FirstName

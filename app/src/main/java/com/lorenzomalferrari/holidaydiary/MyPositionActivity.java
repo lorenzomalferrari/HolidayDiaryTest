@@ -109,7 +109,7 @@ public class MyPositionActivity extends FragmentActivity implements OnMapReadyCa
             }
             myCurrent = mMap.addMarker(new MarkerOptions()
                                 .position(new LatLng(latitude,longitude))
-                                .title("YUO"));
+                                .title("YUO ARE HERE"));
 
             //move camera to this position
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude),12.0f));

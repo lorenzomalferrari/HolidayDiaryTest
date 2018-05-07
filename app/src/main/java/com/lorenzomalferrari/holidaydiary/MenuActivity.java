@@ -16,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity
@@ -42,6 +44,21 @@ public class MenuActivity extends AppCompatActivity
         //add this line to display menu1 when the activity is loaded
         /* Modificare in modo che legga lo stato della pagina così se ruoto tel non cambia la situazione */
         displaySelectedScreen(R.id.nav_homepage);
+
+        /* Setto la nav_header_menu con i dati dell'utente */
+        //Img di profilo
+        //ImageView imgUser= findViewById(R.id.nav_header_menu_imgUser);
+        //imgUser.setImageResource(R.mipmap.ic_launcher_round);
+        //Img di Sfondo
+        //LinearLayout imgBackground = findViewById(R.id.nav_header_menu_imgBackground);
+        //imgBackground.setBackground();
+        //Campo Nome + Cognome
+        //TextView user = findViewById(R.id.nav_header_menu_user);
+        //user.setText("Lorenzo Malferrari");
+        //Campo email
+        //TextView email = findViewById(R.id.nav_header_menu_email);
+        //email.setText("malfe.lore@gmail.com");
+
     }
 
     @Override
