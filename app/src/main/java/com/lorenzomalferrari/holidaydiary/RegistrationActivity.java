@@ -141,7 +141,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdate = databaseHelper.updateData(id.getText().toString(),
+                        boolean isUpdate = databaseHelper.updateData("Users",id.getText().toString(),
                                 firstName.getText().toString(),
                                 lastName.getText().toString(),password.getText().toString());
                         if(isUpdate == true)
