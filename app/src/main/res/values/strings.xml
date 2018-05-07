@@ -97,5 +97,11 @@
     <string name="emailAuthor">malfe.lore@gmail.com</string>
     <string name="terms_of_use">Terms of Use</string>
     <string name="privacy">Privacy</string>
+    <string name="pictures_text">Pictures</string>
+    <string name="settings_text">Settings</string>
+    <string name="website">www.lorenzomalferrari.com</string>
+    <string name="author">Lorenzo Malferrari</string>
+    <string name="number_version">Versione 1.7.4</string>
+    <string name="close_popup">X</string>
 
 </resources>
