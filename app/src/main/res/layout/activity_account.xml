@@ -3,6 +3,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
+    private int id, age;
+    private String firstName, lastName, username, password, email, city, country;
+    private char gender;
+    private Date birthdate, registration_date, last_login;
+    -->
+    <!-- Immagine profilo -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <!-- FirstName -->
+    <TextView
+        android:id="@+id/register_firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="Nome"/>
+    <EditText
+        android:id="@+id/register_firstNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/register_firstNameText"
+        android:layout_toEndOf="@+id/register_firstNameText"
+        android:layout_marginStart="26dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="text"/>
+    <!-- LastName -->
+    <TextView
+        android:id="@+id/register_lastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_firstNameText"
+        android:text="Cognome"/>
+    <EditText
+        android:id="@+id/register_lastNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/register_lastNameText"
+        android:layout_below="@+id/register_firstNameValue"
+        android:paddingTop="10dp"
+        android:layout_marginStart="27dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Cognome"/>
+    <!-- Username -->
+    <TextView
+        android:id="@+id/register_usarnameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_lastNameText"
+        android:text="Username"/>
+    <EditText
+        android:id="@+id/register_usarnameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/register_usarnameText"
+        android:layout_below="@+id/register_lastNameValue"
+        android:paddingTop="10dp"
+        android:layout_marginStart="27dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Username"/>
+    <!-- Email -->
+    <TextView
+        android:id="@+id/register_emailText" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@+id/register_usarnameText"
+        android:text="Email"/>
+    <EditText
+        android:id="@+id/register_emailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/register_emailText"
+        android:layout_below="@+id/register_usarnameValue"
+        android:paddingTop="10dp"
+        android:layout_marginStart="56dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email"/>
 
     <Button
         android:layout_width="wrap_content"
