@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SlashActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private TextView txt;
     private ImageView imgV;
@@ -16,7 +16,7 @@ public class SlashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_slash);
+        setContentView(R.layout.activity_splash);
 
         txt = findViewById(R.id.txtWelcomeSplash);
         imgV = findViewById(R.id.imgLogoSplash);
