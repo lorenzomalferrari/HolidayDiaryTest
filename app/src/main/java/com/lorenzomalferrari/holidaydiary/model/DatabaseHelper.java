@@ -114,22 +114,22 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
      */
     private void createStructureDatabase(SQLiteDatabase db){
         //Creazione della tabella User
-        crateUserTable(db);
+        crateUsersTable(db);
         //Creazione della tabella Picture
-        //createPictureTable();
+        //createPicturesTable();
         //Creazione della tabella Position
-        //createPositionTable();
+        //createPositionsTable();
         //Creazione della tabella Note
-        //createNoteTable();
+        //createNotesTable();
         //Creazione della tabella Travel
-        //createTravelTable();
+        //createTravelsTable();
     }
 
     /**
      * Costruzione della tabella utente
      * @param db
      */
-    private void crateUserTable(SQLiteDatabase db) {
+    private void crateUsersTable(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ TABLE_NAMES[0] + "(" +
                 "id INTEGER PRIMARY KEY," +
                 "firstName VARCHAR(255)," +
@@ -144,8 +144,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
                 "birthdate DATE," +
                 "registration_date DATETIME," +
                 "last_login DATETIME)");
-
     }
+
+
 
     /**
      * Ottengo tutti i dati di un utente preciso con i seguenti parametri
