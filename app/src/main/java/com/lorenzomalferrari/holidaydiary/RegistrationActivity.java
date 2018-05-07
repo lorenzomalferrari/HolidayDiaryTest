@@ -31,6 +31,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        // Oggetto della classe DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
         // FirstName
@@ -59,11 +60,13 @@ public class RegistrationActivity extends AppCompatActivity {
         btnviewUpdate= findViewById(R.id.button_update);
         btnDelete= findViewById(R.id.button_delete);
 
-        //
-        id = findViewById(R.id.register_firstNameValue);
+        //Aggiunta Utente
         AddData();
+        //Visualizzo lista di tutti gli Utenti con tutti i rispettivi campi
         viewAll();
+        //Aggiorno dati (id,nome,cognome,password)
         UpdateData();
+        //Cancello utente sapendo id
         DeleteData();
     }
 
@@ -214,7 +217,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     /**
-     * hiamata alla MenuActivity (Navigation Drawer Activity)
+     * Chiamata alla MenuActivity (Navigation Drawer Activity)
      */
     //Chiama la MenuActivity (Navigation Drawer Activity)
     private void callMenu(){
