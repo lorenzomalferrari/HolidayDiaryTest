@@ -17,4 +17,15 @@
     <color name="white">#ffffff</color>
     <color name="orange">#eaad43</color>
 
+
+
+    <!--
+                            Lista dei colori da usare nell'app
+    -->
+
+    <!-- Splash Activity -->
+        <!-- Colore di sfondo e colore del titolo -->
+    <!-- Login Activity -->
+        <!-- Sfondo della pagina, stile del bottone, colore del testo del bottone, colore di testo Email e Password -->
+
 </resources>
