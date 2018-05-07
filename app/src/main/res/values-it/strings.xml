@@ -21,5 +21,7 @@
     <string name="terms_title">Termini di uso</string>
     <string name="copyright">Tutti i diritti riservati</string>
     <string name="numberVersion">Versione 1.5.0</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="privacy">Privacy</string>
 
 </resources>
