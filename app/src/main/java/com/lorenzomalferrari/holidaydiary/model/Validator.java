@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
+ * Classe che controlla che i dati sia validi, ovvero email password etc.....
  */
 public class Validator {
 

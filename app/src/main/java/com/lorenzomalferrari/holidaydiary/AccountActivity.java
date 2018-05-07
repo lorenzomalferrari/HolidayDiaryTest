@@ -11,7 +11,8 @@ import com.lorenzomalferrari.holidaydiary.model.DatabaseHelper;
 
 /**
  *
- * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ * @author Lorenzo Malferrari
+ * @website www.lorenzomalferrari.com
  */
 public class AccountActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        //Inizializzazione dell'oggetto DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
         //button
         btnVisaulizzaDati = findViewById(R.id.btnAccountUser);
@@ -31,6 +33,9 @@ public class AccountActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Visualizzo tutti i dati presenti nella tabella Users del database HolidayDiary
+     */
     public void viewTableData() {
         btnVisaulizzaDati.setOnClickListener(
                 new View.OnClickListener() {

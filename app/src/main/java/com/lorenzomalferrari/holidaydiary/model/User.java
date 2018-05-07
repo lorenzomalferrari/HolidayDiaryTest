@@ -9,7 +9,7 @@ import java.util.Date;
 public class User {
 
     /**
-     *
+     * Variabili che rappresentano i ccampi della tabella Users
      */
     private int id, age;
     private String firstName, lastName, username, password, email, city, country;
