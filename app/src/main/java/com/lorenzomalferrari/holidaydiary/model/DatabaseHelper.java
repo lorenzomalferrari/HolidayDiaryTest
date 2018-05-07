@@ -11,6 +11,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Lorenzo Malferrari - www.lorenzomalferrari.com
+ *
  */
 public class DatabaseHelper extends SQLiteOpenHelper  {
 
@@ -270,9 +271,9 @@ public class DatabaseHelper extends SQLiteOpenHelper  {
     }
 
     /**
-     * Elimino utente dalla tabella
+     * Elimino utente dalla tabella sapendo id
      * @param id
-     * @return
+     * @return int > 0 = cancellato righe || int !> 0 = nessuna riga cancellata
      */
     public Integer deleteData (String id) {
         SQLiteDatabase db = this.getWritableDatabase();
