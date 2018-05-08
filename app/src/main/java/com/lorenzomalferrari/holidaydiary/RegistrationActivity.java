@@ -30,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
         // Oggetto della classe DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
@@ -59,11 +60,13 @@ public class RegistrationActivity extends AppCompatActivity {
         btnviewUpdate= findViewById(R.id.button_update);
         btnDelete= findViewById(R.id.button_delete);
 
-        //
-        id = findViewById(R.id.register_firstNameValue);
+        // Aggiungo utente al database
         AddData();
+        // Viasualizzon tutti gli utenti presenti nel database
         viewAll();
+        // Aggiorno i dati dell'utente
         UpdateData();
+        // Calcello l'utente
         DeleteData();
     }
 
