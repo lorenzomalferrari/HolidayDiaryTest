@@ -8,7 +8,7 @@
 
     <!-- Words for English -->
     <string name="homepage">Home Page</string>
-    <string name="travles">Travels</string>
+    <string name="travels">Travels</string>
     <string name="notes">Notes</string>
     <string name="pictures">Pictures</string>
     <string name="position">Position</string>
@@ -45,7 +45,9 @@
     <string name="birthdate">Birthdate</string>
     <string name="copyright">All rights reserved</string>
 
-    <string name="privacy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
+    <!-- Testo che rappresenta il testo della privacy -->
+    <string name="privacy_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla dolor
         at erat tempus faucibus. Sed massa odio, faucibus quis ipsum eu, luctus sodales ex. Integer
         venenatis quam orci, ultricies accumsan libero laoreet id. Nulla facilisi. Aliquam laoreet
         sapien ac eros iaculis, vel egestas lorem venenatis. Integer ornare fringilla cursus.
@@ -53,7 +55,9 @@
         rutrum et a dolor. Sed velit sapien, vehicula a nisl a, molestie placerat sem.
     </string>
 
-    <string name="terms_text">Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
+    <!-- Testo che rappresenta il testo dei termini d'uso -->
+    <string name="terms_text">
+        Sed lacinia lacus at orci venenatis lacinia. Quisque et ex sed ante
         molestie molestie at sed risus. Vivamus mollis iaculis sem sit amet volutpat.
         Proin vulputate arcu massa, sit amet placerat arcu elementum quis. Ut aliquet lacus nisi,
         eget rutrum metus semper fringilla. Suspendisse eu porta libero, et tempor lacus.
@@ -99,8 +103,6 @@
     <string name="privacy">Privacy</string>
     <string name="pictures_text">Pictures</string>
     <string name="settings_text">Settings</string>
-    <string name="website">www.lorenzomalferrari.com</string>
-    <string name="author">Lorenzo Malferrari</string>
     <string name="number_version">Versione 1.7.4</string>
     <string name="close_popup">X</string>
 

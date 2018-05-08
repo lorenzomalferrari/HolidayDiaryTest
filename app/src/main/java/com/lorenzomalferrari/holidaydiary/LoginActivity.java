@@ -80,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         emailInputLayout.setError(null);
         passwordInputLayout.setError(null);
 
+        // Controllo l'email
         if (validator.isEmpty(email)) {
             emailInputLayout.setError("Email is required");
             return false;
@@ -87,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             emailInputLayout.setError("Enter a valid email");
             return false;
         }
-
+        // Controllo la password
         if (validator.isEmpty(password)) {
             passwordInputLayout.setError("Password is required");
             return false;
